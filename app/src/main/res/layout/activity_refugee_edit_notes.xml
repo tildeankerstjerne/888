@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="235dp"
         android:layout_height="69dp"
-        android:text="Edit Notes"
+        android:text="Edit Note"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
