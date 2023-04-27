@@ -3,10 +3,7 @@
     <string name="app_name">App name</string>
     <string name="login"><U>Already have an account?</U></string>
     <string name="signup">Sign up</string>
-</resources>
 
-
-    <string name="app_name">Test4</string>
     <string name="have_account">Already have an account?</string>
     <string name="sign_up">Sign up</string>
     <string name="back">Back</string>
@@ -25,10 +22,6 @@
     <string name="arabic_refugee_profile">عربي</string>
     <string name="preflanguage_refugee_profile">I want the app to be in:</string>
     <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
-
-
-
-</resources>
 
     <string name="activity_volunteer_main_page0">Welcome, name!</string>
     <string name="activity_volunteer_main_page1">Available</string>
