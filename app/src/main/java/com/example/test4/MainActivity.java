@@ -9,8 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     // laver klassen button
     private TextView textViewLogin;
+
+    private Button button_login;
+
     private Button button_signup;
 
     @Override
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 openSignupPage();
             }
         });
+
     }
 
     public void openLoginPage(){
