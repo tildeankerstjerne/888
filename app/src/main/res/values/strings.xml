@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">Test4</string>
+    <string name="activity_volunteer_main_page0">Welcome, name!</string>
+    <string name="activity_volunteer_main_page1">Available</string>
+    <string name="activity_volunteer_main_page2">Not available</string>
+    <string name="activity_volunteer_main_page3">You can receive calls</string>
+    <string name="activity_volunteer_main_page4">You cant receive calls</string>
+    <string name="activity_login_page0">Login</string>
+    <string name="Activity_login_page1">Not a user? Create a user</string>
+    <string name="Activity_choose_app_language0">Welcome!</string>
+    <string name="Activity_choose_app_language1">عربي</string>
+    <string name="Activity_choose_app_language2">Dansk</string>
+    <string name="Activity_choose_app_language3">English</string>
+    <string name="Activity_choose_app_language4">Soomaali</string>
+    <string name="Activity_choose_app_language5">українська</string>
+    <string name="Activity_choose_app_language6">Türkçe</string>
+    <string name="Activity_choose_app_language7">Bosanski</string>
+    <string name="Activity_choose_app_language8">Tiếng Việt</string>
+    <string name="Activity_choose_app_language9">فارسی</string>
+    <string name="Activity_choose_app_language10">پښتو</string>
+    <string name="Activity_choose_app_language11">اردو</string>
+    <string name="activity_emergency0">Urgent emergency number: 112</string>
+    <string name="activity_emergency1">Police department: 114</string>
 </resources>
+
+
+
