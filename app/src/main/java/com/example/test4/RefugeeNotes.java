@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class RefugeeNotes extends AppCompatActivity {
     private Button button_edit_notes;
+    private Button button_back_notes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,21 @@ public class RefugeeNotes extends AppCompatActivity {
                 openRefugeeEditNotes();
             }
         });
+        button_back_notes = (Button) findViewById(R.id.button_back_notes);
+        button_back_notes.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openRefugeeMenu();
+            }
+        });
+
     }
     public void openRefugeeEditNotes(){
         Intent intent = new Intent(this, RefugeeEditNotes.class);
+        startActivity(intent);
+    }
+    public void openRefugeeMenu(){
+        Intent intent = new Intent(this, RefugeeMenu.class);
         startActivity(intent);
     }
 }
