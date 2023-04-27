@@ -1,5 +1,11 @@
 <resources>
 
+    <string name="app_name">App name</string>
+    <string name="login"><U>Already have an account?</U></string>
+    <string name="signup">Sign up</string>
+</resources>
+
+
     <string name="app_name">Test4</string>
     <string name="have_account">Already have an account?</string>
     <string name="sign_up">Sign up</string>
@@ -46,6 +52,3 @@
     <string name="activity_emergency0">Urgent emergency number: 112</string>
     <string name="activity_emergency1">Police department: 114</string>
 </resources>
-
-
-
