@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    // laver klassen button
     private Button button_login;
     private Button button_signup;
 
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 openSignupPage();
             }
         });
+
     }
 
     public void openLoginPage(){
