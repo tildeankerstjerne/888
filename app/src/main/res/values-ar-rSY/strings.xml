@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App name</string>
+    <string name="login"><U>هل لديك حساب؟</U></string>
+    <string name="signup">اشتراك</string>
+
+    <string name="have_account">هل لديك حساب؟</string>
+    <string name="sign_up">اشتراك</string>
+    <string name="back">عُد</string>
+    <string name="username_refugeeprofile">اسم المستخدم</string>
+    <string name="role_volunteer_refugeeprofile">متطوع</string>
+    <string name="role_refugee_refugeeprofile">لاجئ</string>
+    <string name="speaklanguage_refugeeprofile">أنا أتحدث اللغات التالية:</string>
+    <string name="applanguage_refugeeprofile">لغة التطبيق:</string>
+    <string name="saveprofile">احفظ الملف</string>
+    <string name="dato_refugee_notes">أدخل التاريخ</string>
+    <string name="tidspunkt_refugee_notes">أدخل الوقت</string>
+    <string name="note_refugee_notes">نشاط الملاحظة</string>
+    <string name="edit_refugee_notes">يحرر</string>
+    <string name="dansk_refugee_profile">Dansk</string>
+    <string name="english_refugee_profile">English</string>
+    <string name="arabic_refugee_profile">عربي</string>
+    <string name="preflanguage_refugee_profile">أريد أن يكون التطبيق متاحًا:</string>
+    <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
+
+    <string name="activity_volunteer_main_page0">مرحبا اسم!</string>
+    <string name="activity_volunteer_main_page1">متاح</string>
+    <string name="activity_volunteer_main_page2">غير متاح</string>
+    <string name="activity_volunteer_main_page3">يمكنك استقبال المكالمات</string>
+    <string name="activity_volunteer_main_page4">لا يمكنك استقبال المكالمات</string>
+    <string name="activity_login_page0">تسجيل الدخول</string>
+    <string name="Activity_login_page1">لست مستخدم؟ قم بإنشاء مستخدم</string>
+    <string name="Activity_choose_app_language0">مرحباً</string>
+    <string name="Activity_choose_app_language1">عربي</string>
+    <string name="Activity_choose_app_language2">Dansk</string>
+    <string name="Activity_choose_app_language3">English</string>
+    <string name="Activity_choose_app_language4">Soomaali</string>
+    <string name="Activity_choose_app_language5">українська</string>
+    <string name="Activity_choose_app_language6">Türkçe</string>
+    <string name="Activity_choose_app_language7">Bosanski</string>
+    <string name="Activity_choose_app_language8">Tiếng Việt</string>
+    <string name="Activity_choose_app_language9">فارسی</string>
+    <string name="Activity_choose_app_language10">پښتو</string>
+    <string name="Activity_choose_app_language11">اردو</string>
+    <string name="activity_emergency0">رقم الطوارئ العاجل: 112</string>
+    <string name="activity_emergency1">قسم الشرطة: 114</string>
+</resources>

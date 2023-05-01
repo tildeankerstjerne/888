@@ -9,166 +9,97 @@
 
 
     <TextView
-        android:id="@+id/welcome_app_name"
+        android:id="@+id/welcome_app_name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
         android:text="@string/Activity_choose_app_language0"
         android:textColor="@color/welcome_name_color"
-        android:textSize="28dp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
 
 
-    <TextView
-        android:id="@+id/Arabisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="49dp"
-        android:text="@string/Activity_choose_app_language1"
-        android:textSize="24dp"
-        android:textStyle="bold"
+    <ImageButton
+        android:id="@+id/button_flag_dk1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="352dp"
+        android:background="@drawable/flag_custom_button"
+        android:padding="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/denmark"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/welcome_app_name"
-        app:layout_constraintTop_toBottomOf="@+id/Engelsk" />
-
-    <TextView
-        android:id="@+id/Dansk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/Activity_choose_app_language2"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_app_name" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541"
+        android:contentDescription="Choose an app language"
+        />
 
-    <TextView
-        android:id="@+id/Engelsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Activity_choose_app_language3"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/Dansk"
+    <ImageButton
+        android:id="@+id/button_flag_uk1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="15dp"
+        android:background="@drawable/flag_custom_button"
+        android:scaleType="centerInside"
+        android:src="@drawable/uk"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Dansk" />
+        app:layout_constraintTop_toBottomOf="@+id/button_flag_dk1"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="Choose an app language"/>
 
-    <TextView
-        android:id="@+id/Somalisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="41dp"
-        android:text="@string/Activity_choose_app_language4"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/Ukrainsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="51dp"
-        android:text="@string/Activity_choose_app_language5"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Dansk" />
-
-    <TextView
-        android:id="@+id/Tyrkisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="49dp"
-        android:text="Activity_choose_app_language6"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/Bosnisk"
+    <ImageButton
+        android:id="@+id/button_flag_ukraine1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="15dp"
+        android:background="@drawable/flag_custom_button"
+        android:scaleType="centerInside"
+        android:src="@drawable/ukraine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Bosnisk" />
-
-    <TextView
-        android:id="@+id/Bosnisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
-        android:text="Activity_choose_app_language7"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ukrainsk" />
+        app:layout_constraintTop_toBottomOf="@+id/button_flag_uk1"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="Choose an app language"/>
 
-    <TextView
-        android:id="@+id/Vietnamesisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:text="Activity_choose_app_language8"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/Somalisk"
-        app:layout_constraintStart_toStartOf="@+id/Pashto"
-        app:layout_constraintTop_toBottomOf="@+id/Bosnisk" />
-
-    <TextView
-        android:id="@+id/Persisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="49dp"
-        android:text="Activity_choose_app_language9"
-        android:textSize="24dp"
-        android:textStyle="bold"
+    <ImageButton
+        android:id="@+id/button_flag_syria1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/flag_custom_button"
+        android:padding="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/syria"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tyrkisk" />
-
-    <TextView
-        android:id="@+id/Pashto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="53dp"
-        android:text="Activity_choose_app_language10"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/Bosnisk"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Vietnamesisk" />
-
-    <TextView
-        android:id="@+id/Urdu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:text="Activity_choose_app_language11"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/Engelsk"
-        app:layout_constraintStart_toStartOf="@+id/Arabisk"
-        app:layout_constraintTop_toBottomOf="@+id/Persisk" />
+        app:layout_constraintTop_toBottomOf="@+id/button_flag_ukraine1"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="Choose an app language"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="27dp"
+        android:layout_height="31dp"
         android:src="@drawable/baseline_info_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

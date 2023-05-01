@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">App name</string>
+    <string name="app_name" translatable="false">App name</string>
     <string name="login"><U>Already have an account?</U></string>
     <string name="signup">Sign up</string>
 
