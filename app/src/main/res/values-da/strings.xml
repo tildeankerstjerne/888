@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App name</string>
+    <string name="login"><U>Allerede en bruger?</U></string>
+    <string name="signup">Tilmeld</string>
+
+    <string name="have_account">Allerede en bruger?</string>
+    <string name="sign_up">Tilmeld</string>
+    <string name="back">Tilbage</string>
+    <string name="username_refugeeprofile">Brugernavn</string>
+    <string name="role_volunteer_refugeeprofile">Frivillig</string>
+    <string name="role_refugee_refugeeprofile">Flygtning</string>
+    <string name="speaklanguage_refugeeprofile">Jeg taler disse sprog:</string>
+    <string name="applanguage_refugeeprofile">Appens sprog</string>
+    <string name="saveprofile">Gem profil</string>
+    <string name="dato_refugee_notes">indsæt dato</string>
+    <string name="tidspunkt_refugee_notes">indsæt tidspunkt</string>
+    <string name="note_refugee_notes">Note aktivitet</string>
+    <string name="edit_refugee_notes">Rediger</string>
+    <string name="dansk_refugee_profile">Dansk</string>
+    <string name="english_refugee_profile">English</string>
+    <string name="arabic_refugee_profile">عربي</string>
+    <string name="preflanguage_refugee_profile">Appen sprog skal være:</string>
+    <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
+
+    <string name="activity_volunteer_main_page0">Velkommen, navn!</string>
+    <string name="activity_volunteer_main_page1">Tilgængelig</string>
+    <string name="activity_volunteer_main_page2">Ikke tilgængelig</string>
+    <string name="activity_volunteer_main_page3">Du kan modtage opkald</string>
+    <string name="activity_volunteer_main_page4">Du kan ikke modtage opkald</string>
+    <string name="activity_login_page0">Log ind</string>
+    <string name="Activity_login_page1">Ikke en bruger? Tilmeld dig</string>
+    <string name="Activity_choose_app_language0">Velkommen!</string>
+    <string name="Activity_choose_app_language1">عربي</string>
+    <string name="Activity_choose_app_language2">Dansk</string>
+    <string name="Activity_choose_app_language3">English</string>
+    <string name="Activity_choose_app_language4">Soomaali</string>
+    <string name="Activity_choose_app_language5">українська</string>
+    <string name="Activity_choose_app_language6">Türkçe</string>
+    <string name="Activity_choose_app_language7">Bosanski</string>
+    <string name="Activity_choose_app_language8">Tiếng Việt</string>
+    <string name="Activity_choose_app_language9">فارسی</string>
+    <string name="Activity_choose_app_language10">پښتو</string>
+    <string name="Activity_choose_app_language11">اردو</string>
+    <string name="activity_emergency0">Urgent emergency number: 112</string>
+    <string name="activity_emergency1">Politi: 114</string>
+</resources>

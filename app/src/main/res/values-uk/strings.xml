@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App name</string>
+    <string name="login"><U>Вже зареєструвалися??</U></string>
+    <string name="signup">Реєстрація</string>
+
+    <string name="have_account">Вже є аккаунт?</string>
+    <string name="sign_up">Реєстрація</string>
+    <string name="back">назад</string>
+    <string name="username_refugeeprofile">ім\'я користувача</string>
+    <string name="role_volunteer_refugeeprofile">волонтер</string>
+    <string name="role_refugee_refugeeprofile">біженець</string>
+    <string name="speaklanguage_refugeeprofile">Я володію такими мовами:</string>
+    <string name="applanguage_refugeeprofile">Мова програми</string>
+    <string name="saveprofile">зберегти профіль</string>
+    <string name="dato_refugee_notes">вставте дату</string>
+    <string name="tidspunkt_refugee_notes">вставте час</string>
+    <string name="note_refugee_notes">Примітки діяльності</string>
+    <string name="edit_refugee_notes">Редагувати</string>
+    <string name="dansk_refugee_profile">Dansk</string>
+    <string name="english_refugee_profile">English</string>
+    <string name="arabic_refugee_profile">عربي</string>
+    <string name="preflanguage_refugee_profile">Я хочу, щоб програма була в:</string>
+    <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
+
+    <string name="activity_volunteer_main_page0">Ласкаво просимо, ім\'я!</string>
+    <string name="activity_volunteer_main_page1">в наявності</string>
+    <string name="activity_volunteer_main_page2">Недоступний</string>
+    <string name="activity_volunteer_main_page3">Ви можете приймати дзвінки</string>
+    <string name="activity_volunteer_main_page4">Ви не можете приймати дзвінки</string>
+    <string name="activity_login_page0">логін</string>
+    <string name="Activity_login_page1">Ви не користувач? Створіть користувача</string>
+    <string name="Activity_choose_app_language0">Ласкаво просимоً</string>
+    <string name="Activity_choose_app_language1">عربي</string>
+    <string name="Activity_choose_app_language2">Dansk</string>
+    <string name="Activity_choose_app_language3">English</string>
+    <string name="Activity_choose_app_language4">Soomaali</string>
+    <string name="Activity_choose_app_language5">українська</string>
+    <string name="Activity_choose_app_language6">Türkçe</string>
+    <string name="Activity_choose_app_language7">Bosanski</string>
+    <string name="Activity_choose_app_language8">Tiếng Việt</string>
+    <string name="Activity_choose_app_language9">فارسی</string>
+    <string name="Activity_choose_app_language10">پښتو</string>
+    <string name="Activity_choose_app_language11">اردو</string>
+    <string name="activity_emergency0">номер термінової екстреної допомоги: 112</string>
+    <string name="activity_emergency1">Відділ поліції: 114</string>
+</resources>

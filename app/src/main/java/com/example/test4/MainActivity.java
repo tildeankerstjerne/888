@@ -4,46 +4,53 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+
+
 
 public class MainActivity extends AppCompatActivity {
-    // laver klassen button
-    private Button button_login;
-    private Button button_signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // inisialiserer button med dens id som vi satte til button over i xml
-        button_login = (Button) findViewById(R.id.button_open_login);
-        button_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //kalder på metoden vi laver nedenunder
-                openLoginPage();
-            }
+        // link the variables to the flag buttons via id
+        ImageButton en = findViewById(R.id.button_flag_uk);
+        ImageButton dk = findViewById(R.id.button_flag_dk);
+        ImageButton arab = findViewById(R.id.button_flag_syria);
+        ImageButton ukraine = findViewById(R.id.button_flag_ukraine);
+        LanguageManager lang = new LanguageManager(this);
+
+        // when the UK flag is pressed
+        en.setOnClickListener(view ->
+        {
+            // implementing method (from the LanguageManager)
+            lang.updateResource("en");
+            Intent intent = new Intent(MainActivity.this, ChooseSignupLogin.class);
+            startActivity(intent);
         });
 
-
-        button_signup = (Button) findViewById(R.id.button_open_signup);
-        button_signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //kalder på metoden vi laver nedenunder
-                openSignupPage();
-            }
+        dk.setOnClickListener(view ->
+        {
+            lang.updateResource("da");
+            Intent intentMain = new Intent(MainActivity.this, ChooseSignupLogin.class);
+            startActivity(intentMain);
         });
-    }
 
-    public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
-        startActivity(intent);
-    }
-    public void openSignupPage(){
-        Intent intent = new Intent(this, SignupPage.class);
-        startActivity(intent);
+        ukraine.setOnClickListener(view ->
+        {
+            lang.updateResource("uk");
+            Intent intent = new Intent(MainActivity.this, ChooseSignupLogin.class);
+            startActivity(intent);
+        });
+
+        arab.setOnClickListener(view ->
+        {
+            lang.updateResource("ar");
+            Intent intent = new Intent(MainActivity.this, ChooseSignupLogin.class);
+            startActivity(intent);
+        });
+
     }
 }
