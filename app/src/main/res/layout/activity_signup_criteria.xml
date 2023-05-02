@@ -1,43 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6D6D6"
     tools:context=".SignupCriteria">
-
-    <Button
-        android:id="@+id/button_create_user_signupcriteria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginBottom="347dp"
-        android:text="Create refugee"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_create_volunteer_signupcriteria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_create_user_signupcriteria"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="91dp"
-        android:text="create volunteer" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="150dp"
+        android:width="150dp"
+        android:height="150dp"
+        android:text="create volunteer"
+        app:cornerRadius="250dp" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
+        android:layout_width="252dp"
+        android:layout_height="46dp"
         android:layout_above="@+id/button_create_volunteer_signupcriteria"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="58dp"
-        android:text="Sign up criteria"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="64dp"
+        android:text="Sign me up as.."
+        android:textAlignment="center"
+        android:textColor="#D66850"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="212dp"
+        android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="120dp"
+        android:text="continue"
+        app:cornerRadius="30dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="356dp"
+        android:text="I want my calls to be in "
+        android:textColor="#D66850"
         android:textSize="24sp" />
-</RelativeLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="16dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_Complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="390dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/button_create_user_signupcriteria"
+        android:layout_width="wrap_content"
+        android:layout_height="154dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="150dp"
+        android:width="150dp"
+        android:height="150dp"
+        android:text="Create refugee"
+        app:cornerRadius="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
