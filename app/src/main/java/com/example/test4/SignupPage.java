@@ -1,58 +1,81 @@
 package com.example.test4;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupPage extends AppCompatActivity {
-    // laver klassen button
 
-    private Button button_continue_signup;
-    private EditText editText_username_signuppage, editText_password_signuppage;
+    // creating variables for our edittext, button and dbhandler
+    private EditText _username, _password, _telephone;
 
-    DatabaseHandler dbHandler;
+    private CheckBox _language;
+    private Button ContinueButton;
+    private DatabaseHandler dbHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_page);
 
+        // initializing all our variables.
+        _username = findViewById(R.id.editText_username_signuppage);
+        _password = findViewById(R.id.editText_password_signuppage);
+        _telephone = findViewById(R.id.editText_number_signuppage);
+        _language = findViewById(R.id.checkBox_danish);
 
-        button_continue_signup = (Button) findViewById(R.id.button_continue_signup);
-        editText_username_signuppage = (EditText) findViewById(R.id.editText_username_signuppage);
-        editText_password_signuppage = (EditText) findViewById(R.id.editText_password_signuppage);
 
+        ContinueButton = findViewById(R.id.button_continue_signup);
 
-        button_continue_signup.setOnClickListener(new View.OnClickListener() {
+        // creating a new dbhandler class
+        // and passing our context to it.
+        dbHandler = new DatabaseHandler(SignupPage.this);
+
+        // below line is to add on click listener for our add course button.
+        ContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSignupCriteria();
+
+                // below line is to get data from all edit text fields.
+                String username = _username.getText().toString();
+                String password = _password.getText().toString();
+                String telephone = _telephone.getText().toString();
+                String language = _language.getText().toString();
+
+                /*
+                String danish = _danish.getText().toString();
+                String english = _english.getText().toString();
+                String refugee = _refugee.getText().toString();
+                */
+
+
+                // validating if the text fields are empty or not.
+                if (username.isEmpty()||password.isEmpty()||telephone.isEmpty()) {
+                    Toast.makeText(SignupPage.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else
+                {
+                    // on below line we are calling a method to add new
+                    // course to sqlite data and pass all our values to it.
+                    dbHandler.addRefugeeTable(username, password, telephone, language);
+
+                    // after adding the data we are displaying a toast message.
+                    openSignupCriteria();
+                }
 
             }
         });
-        dbHandler = new DatabaseHandler(this, null, null, 1);
-
     }
-
-    public void printDatabase() {
-        String dbstring = dbHandler.databaseToString();
-        editText_username_signuppage.setText("");
-        editText_password_signuppage.setText("");
-
-    }
-
-    public void addStuffClick(View view)
-    {
-        Accounts accounts = new Accounts(editText_username_signuppage.getText().toString());
-        dbHandler.addAccounts((accounts));
-        printDatabase();
-    }
-
-
 
     public void openSignupCriteria(){
         Intent intent = new Intent(this, SignupCriteria.class);
