@@ -45,7 +45,7 @@ public class SignupPage extends AppCompatActivity {
 
     }
 
-    public void addStuffClick(View view)
+    public void addStuffClick(View view) //denne bliver aldrig brugt??
     {
         Accounts accounts = new Accounts(editText_username_signuppage.getText().toString());
         dbHandler.addAccounts((accounts));
