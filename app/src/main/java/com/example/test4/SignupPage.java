@@ -63,11 +63,20 @@ public class SignupPage extends AppCompatActivity {
                     return;
                 }
 
+
                 else
                 {
                     // on below line we are calling a method to add new
                     // course to sqlite data and pass all our values to it.
                     dbHandler.addRefugeeTable(username, password, telephone, language);
+
+    public void addStuffClick(View view) //denne bliver aldrig brugt??
+    {
+        Accounts accounts = new Accounts(editText_username_signuppage.getText().toString());
+        dbHandler.addAccounts((accounts));
+        printDatabase();
+    }
+
 
                     // after adding the data we are displaying a toast message.
                     openSignupCriteria();
