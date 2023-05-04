@@ -3,93 +3,82 @@ package com.example.test4;
 import android.content.ContentValues;
 import android.content.Context;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // creating a constant variables for our database.
-
     public static final String DB_NAME = "database.db";
-
-
     public static final int DB_VERSION = 1;
 
-
-    // Refugee
+    // Refugee table
     public static final String REFUGEE_TABLE_NAME = "refugee";
-
-
     public static final String REFUGEE_COLUMN_ID = "id";
-
     public static final String REFUGEE_COLUMN_USERNAME = "username";
-
     public static final String REFUGEE_COLUMN_PASSWORD = "password";
-
     public static final String REFUGEE_COLUMN_NUMBER = "number";
-
     public static final String REFUGEE_COLUMN_LANGUAGE = "language";
-
 
     // Volunteer table
     public static final String VOLUNTEER_TABLE_NAME = "volunteer";
-
     public static final String VOLUNTEER_COLUMN_ID = "id";
-
     public static final String VOLUNTEER_COLUMN_USERNAME = "username";
-
     public static final String VOLUNTEER_COLUMN_PASSWORD = "password";
-
     public static final String VOLUNTEER_COLUMN_NUMBER = "number";
-
     public static final String VOLUNTEER_COLUMN_LANGUAGE = "language";
-
     public static final String VOLUNTEER_COLUMN_STATUS = "status";
 
-
-    // Notes
-    public static final String TABLE_NAME_NOTES = "notes";
-
-    public static final String ID_COL_NOTES = "id";
-
-    public static final String COL_TEXT = "text";
-
+    // Notes table
+    public static final String NOTES_TABLE_NAME = "notes";
+    public static final String NOTES_COLUMN_ID = "id";
+    public static final String NOTES_COLUMN_TEXT = "text";
+    public static final String NOTES_COLUMN_REFUGEE_ID = "refugee_id";
 
     // creating a constructor for our database handler.
     public DatabaseHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         // Create refugee table
         db.execSQL("CREATE TABLE " + REFUGEE_TABLE_NAME + " (" +
-                REFUGEE_COLUMN_ID + " INTEGER PRIMARY KEY, " +
+                REFUGEE_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 REFUGEE_COLUMN_USERNAME + " TEXT, " +
                 REFUGEE_COLUMN_PASSWORD + " TEXT, " +
                 REFUGEE_COLUMN_NUMBER + " TEXT, " +
-                REFUGEE_COLUMN_LANGUAGE + " TEXT)");;
+                REFUGEE_COLUMN_LANGUAGE + " TEXT)");
 
         // Create volunteer table
         db.execSQL("CREATE TABLE " + VOLUNTEER_TABLE_NAME + " (" +
-                VOLUNTEER_COLUMN_ID + " INTEGER PRIMARY KEY, " +
+                VOLUNTEER_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 VOLUNTEER_COLUMN_USERNAME + " TEXT, " +
                 VOLUNTEER_COLUMN_PASSWORD + " TEXT, " +
                 VOLUNTEER_COLUMN_NUMBER + " TEXT, " +
                 VOLUNTEER_COLUMN_LANGUAGE + " TEXT, " +
-                VOLUNTEER_COLUMN_STATUS + " TEXT)");;
+                VOLUNTEER_COLUMN_STATUS + " TEXT)");
 
-        // cREATE NOTES TABLE
-        db.execSQL("CREATE TABLE " + TABLE_NAME_NOTES + " ("
-                + ID_COL_NOTES + " INTEGER PRIMARY KEY,"
-                + COL_TEXT + " TEXT, "
-                + " FOREIGN KEY ("+REFUGEE_COLUMN_ID+") REFERENCES "+REFUGEE_TABLE_NAME+"("+REFUGEE_COLUMN_ID+"));");
-
+        // Create notes table
+        db.execSQL("CREATE TABLE " + NOTES_TABLE_NAME + " (" +
+                NOTES_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                NOTES_COLUMN_TEXT + " TEXT, " +
+                NOTES_COLUMN_REFUGEE_ID + " INTEGER, " +
+                "FOREIGN KEY (" + NOTES_COLUMN_REFUGEE_ID + ") REFERENCES " +
+                REFUGEE_TABLE_NAME + "(" + REFUGEE_COLUMN_ID + "))");
     }
 
     // this method is use to add new table to our sqlite database.
-    public void addRefugeeTable(String username, String password, String telephone, String language) {
+    public void addRefugeeTable(String username, String password, String telephone, ArrayList<String> selectedLanguagesList) {
+        String languages = "";
+        for (String languageItem : selectedLanguagesList) {
+            languages += languageItem + ",";
+        }
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -105,7 +94,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(REFUGEE_COLUMN_USERNAME, username);
         values.put(REFUGEE_COLUMN_PASSWORD, password);
         values.put(REFUGEE_COLUMN_NUMBER, telephone);
-        values.put(REFUGEE_COLUMN_LANGUAGE, language);
+        values.put(REFUGEE_COLUMN_LANGUAGE, languages);
+
 
         // after adding all values we are passing
         // content values to our table.
@@ -116,8 +106,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addVolunteerTable(String username, String password, String telephone, String language, String status) {
-
+    public void addVolunteerTable(String username, String password, String telephone, ArrayList<String> selectedLanguagesList) {
+        String languages = "";
+        for (String languageItem : selectedLanguagesList) {
+            languages += languageItem + ",";
+        }
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
         // as we are writing data in our database.
@@ -132,12 +125,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(VOLUNTEER_COLUMN_USERNAME, username);
         values.put(VOLUNTEER_COLUMN_PASSWORD, password);
         values.put(VOLUNTEER_COLUMN_NUMBER, telephone);
-        values.put(VOLUNTEER_COLUMN_LANGUAGE, language);
-        values.put(VOLUNTEER_COLUMN_STATUS, status);
+        values.put(VOLUNTEER_COLUMN_LANGUAGE, languages);
 
         // after adding all values we are passing
         // content values to our table.
-        db.insert(REFUGEE_TABLE_NAME, null, values);
+        db.insert(VOLUNTEER_TABLE_NAME, null, values);
 
         // at last we are closing our
         // database after adding database.
@@ -155,9 +147,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // variable for content values.
         ContentValues values = new ContentValues();
 
-        values.put(COL_TEXT, text);
+        values.put(NOTES_COLUMN_TEXT, text);
 
-        db.insert(TABLE_NAME_NOTES, null, values);
+        db.insert(NOTES_TABLE_NAME, null, values);
 
         // at last we are closing our
         // database after adding database.
@@ -170,9 +162,41 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // this method is called to check if the table exists already.
         db.execSQL("DROP TABLE IF EXISTS " + REFUGEE_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + VOLUNTEER_TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_NOTES);
+        db.execSQL("DROP TABLE IF EXISTS " + NOTES_TABLE_NAME);
 
         // calling the onCreate method that creates the database
         onCreate(db);
+    }
+    public Refugees getRefugees(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(REFUGEE_TABLE_NAME, new String[] {REFUGEE_COLUMN_ID, REFUGEE_COLUMN_USERNAME, REFUGEE_COLUMN_PASSWORD},
+                REFUGEE_COLUMN_USERNAME + "=? AND " + REFUGEE_COLUMN_PASSWORD + "=?", new String[] { username, password },
+                null, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            Refugees refugees = new Refugees(cursor.getString(0), cursor.getString(1), cursor.getString(2));
+            cursor.close();
+            db.close();
+            return refugees;
+        } else {
+            return null;
+        }
+    }
+    public Volunteers getVolunteers(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(VOLUNTEER_TABLE_NAME, new String[] {VOLUNTEER_COLUMN_ID, VOLUNTEER_COLUMN_USERNAME, VOLUNTEER_COLUMN_PASSWORD, VOLUNTEER_COLUMN_NUMBER},
+                VOLUNTEER_COLUMN_USERNAME + "=? AND " + VOLUNTEER_COLUMN_PASSWORD + "=?", new String[] { username, password },
+                null, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            Volunteers volunteers = new Volunteers (cursor.getString(0), cursor.getString(1), cursor.getString(2));
+            cursor.close();
+            db.close();
+            return volunteers;
+        } else {
+            return null;
+        }
     }
 }

@@ -44,4 +44,12 @@
     <string name="Activity_choose_app_language11">اردو</string>
     <string name="activity_emergency0">Urgent emergency number: 112</string>
     <string name="activity_emergency1">Police department: 114</string>
+
+    <string-array name="languages_array">
+        <item>Danish</item>
+        <item>English</item>
+        <item>Ukrainian</item>
+        <item>Arabic</item>
+        <item>Syrian</item>
+    </string-array>
 </resources>
