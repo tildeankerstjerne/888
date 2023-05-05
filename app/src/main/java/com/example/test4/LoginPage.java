@@ -3,6 +3,7 @@ package com.example.test4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,8 @@ public class LoginPage extends AppCompatActivity {
     private Button button_continue_login, button_continue_volunteer_login, button_login;
     private EditText enter_username_login, enter_password_login;
     private DatabaseHandler dbHandler;
-    int userId;
+    private SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
         dbHandler = new DatabaseHandler(LoginPage.this);
+        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
         button_create_user_login = findViewById(R.id.button_create_user_login);
         enter_username_login = findViewById(R.id.enter_username_login);
@@ -48,9 +51,11 @@ public class LoginPage extends AppCompatActivity {
                 Refugees refugees = dbHandler.getRefugees(username, password);
                 Volunteers volunteers = dbHandler.getVolunteers(username, password);
                 if (refugees != null) {
+                    saveUserId(Integer.parseInt(refugees.getID()));
                     // User exists, open the RefugeeMainPage
                     openRefugeeMainPage();
                 } else if (volunteers != null) {
+                    saveUserId(Integer.parseInt(volunteers.getID()));
                     openVolunteerMain();
                 }
                 else {
@@ -58,6 +63,14 @@ public class LoginPage extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void saveUserId(int userId) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("userId", userId);
+        editor.apply();
+    }
+    private int getUserId() {
+        return sharedPreferences.getInt("userId", -1); // default value of -1 if not found
     }
 
     public void openRefugeeMainPage(){

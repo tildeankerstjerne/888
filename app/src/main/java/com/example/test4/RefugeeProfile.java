@@ -3,6 +3,7 @@ package com.example.test4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,11 +12,15 @@ import android.widget.CheckBox;
 public class RefugeeProfile extends AppCompatActivity {
     private Button button_edit_refugee_profile;
     private Button button_back_profile;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refugee_profile);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", -1);
 
         button_edit_refugee_profile = (Button) findViewById(R.id.button_edit_refugee_profile);
         button_edit_refugee_profile.setOnClickListener(new View.OnClickListener() {

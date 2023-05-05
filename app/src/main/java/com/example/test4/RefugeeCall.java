@@ -6,9 +6,11 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 
@@ -18,6 +20,8 @@ public class RefugeeCall extends AppCompatActivity {
     EditText phoneNo;
     FloatingActionButton callbtn;
     static int PERMISSION_CODE = 100;
+    static int CALL_CODE = 101;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,9 @@ public class RefugeeCall extends AppCompatActivity {
         setContentView(R.layout.activity_refugee_call);
         phoneNo = findViewById(R.id.editTextPhone);
         callbtn = findViewById(R.id.callbtn);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", -1);
 
         if (ContextCompat.checkSelfPermission(RefugeeCall.this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(RefugeeCall.this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_CODE);
@@ -35,8 +42,22 @@ public class RefugeeCall extends AppCompatActivity {
                 String phoneno = phoneNo.getText().toString();
                 Intent i = new Intent(Intent.ACTION_CALL);
                 i.setData(Uri.parse("tel:" + phoneno));
-                startActivity(i);
+                startActivityForResult(i, CALL_CODE);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CALL_CODE) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("userId", userId);
+            editor.apply();
+
+            Intent intent = new Intent(this, RefugeeCallEnded.class);
+            startActivity(intent);
+        }
     }
 }

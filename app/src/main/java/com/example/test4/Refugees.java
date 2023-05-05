@@ -7,6 +7,8 @@ public class Refugees {
     private String number;
     private String language;
 
+    private String notes;
+
     public String getID() {
         return ID;
     }
@@ -47,10 +49,17 @@ public class Refugees {
         this.language = language;
     }
 
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public Refugees(String ID, String username, String password) {
         this.ID = ID;
         this.username = username;
         this.password = password;
-
     }
 }

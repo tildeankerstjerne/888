@@ -11,9 +11,11 @@ import static com.example.test4.DatabaseHandler.VOLUNTEER_TABLE_NAME;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +25,7 @@ public class RefugeeMainPage extends AppCompatActivity {
 
     private Button button_emergency_refugee_main, button_menu_refugee_main, button_start_call_refugee_main, show_number_refugeemain;
     private TextView volunteerNumberTextView;
-
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,17 @@ public class RefugeeMainPage extends AppCompatActivity {
 
         volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);
 
-        Intent intent = getIntent();
-        int refugeeId = intent.getIntExtra("refugeeId", 0);
+        //Intent intent = getIntent();
+        //int refugeeId = intent.getIntExtra("refugeeId", 0);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", -1);
+
+        if (userId != -1) {
+            Toast.makeText(RefugeeMainPage.this, "userId is known" + userId, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(RefugeeMainPage.this, "Failed", Toast.LENGTH_SHORT).show();
+        }
 
         show_number_refugeemain = (Button) findViewById(R.id.show_number_refugeemain);
 
@@ -42,28 +53,41 @@ public class RefugeeMainPage extends AppCompatActivity {
             public void onClick(View v) {
                 DatabaseHandler dbHandler = new DatabaseHandler(RefugeeMainPage.this);
                 SQLiteDatabase db = dbHandler.getReadableDatabase();
-                String[] selectionArgs = {String.valueOf(refugeeId)};
-                Cursor cursor = db.rawQuery("SELECT * FROM " + VOLUNTEER_TABLE_NAME + " WHERE " + VOLUNTEER_COLUMN_LANGUAGE + " = (SELECT " + REFUGEE_COLUMN_LANGUAGE + " FROM " + REFUGEE_TABLE_NAME + " WHERE " + REFUGEE_COLUMN_ID + " = ?) ORDER BY RANDOM() LIMIT 1", selectionArgs);
+                String[] selectionArgs = {String.valueOf(userId)};
+                String refugeeQuery = "SELECT " + REFUGEE_COLUMN_LANGUAGE + " FROM " + REFUGEE_TABLE_NAME + " WHERE " + REFUGEE_COLUMN_ID + " = ?";
+                Cursor cursor = db.rawQuery(refugeeQuery, selectionArgs);
                 if (cursor.moveToFirst()) {
-                    String volunteerNumber = cursor.getString(cursor.getColumnIndex(VOLUNTEER_COLUMN_NUMBER));
-                    TextView volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);
-                   volunteerNumberTextView.setText("Volunteer's number: " + volunteerNumber);
-                   // Toast.makeText(RefugeeMainPage.this, "Volunteer's number:" + volunteerNumber, Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(RefugeeMainPage.this, "Failed", Toast.LENGTH_SHORT).show();
+                    String refugeeLanguage = cursor.getString(cursor.getColumnIndex(REFUGEE_COLUMN_LANGUAGE));
+                    String[] refugeeLanguages = refugeeLanguage.split(",");
+                    String volunteerQuery = "SELECT * FROM " + VOLUNTEER_TABLE_NAME + " WHERE ";
+                    for (int i = 0; i < refugeeLanguages.length; i++) {
+                        if (i > 0) {
+                            volunteerQuery += " OR ";
+                        }
+                        volunteerQuery += VOLUNTEER_COLUMN_LANGUAGE + " LIKE '%" + refugeeLanguages[i] + "%'";
+                    }
+                    volunteerQuery += " ORDER BY RANDOM() LIMIT 1";
+                    Cursor volunteerCursor = db.rawQuery(volunteerQuery, null);
+                    if (volunteerCursor.moveToFirst()) {
+                        String volunteerNumber = volunteerCursor.getString(volunteerCursor.getColumnIndex(VOLUNTEER_COLUMN_NUMBER));
+                        TextView volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);
+                        volunteerNumberTextView.setText("Volunteer's number: " + volunteerNumber);
+                    } else {
+                        Toast.makeText(RefugeeMainPage.this, "Failed to find a volunteer with the same language as you, try again later", Toast.LENGTH_LONG).show();
+                    }
+                    volunteerCursor.close();
+                } else {
+                    Toast.makeText(RefugeeMainPage.this, "Failed to find your language, try again later", Toast.LENGTH_LONG).show();
                 }
                 cursor.close();
             }
         });
 
 
-
         button_emergency_refugee_main = (Button) findViewById(R.id.button_emergency_refugee_main);
         button_emergency_refugee_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //kalder på metoden vi laver nedenunder
                 openEmergencyInfoPage();
             }
         });
@@ -71,7 +95,6 @@ public class RefugeeMainPage extends AppCompatActivity {
         button_menu_refugee_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //kalder på metoden vi laver nedenunder
                 openMenu();
             }
         });

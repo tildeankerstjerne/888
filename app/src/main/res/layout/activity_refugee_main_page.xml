@@ -55,14 +55,14 @@
 
     <TextView
         android:id="@+id/textview_volunteer_number"
-        android:layout_width="203dp"
-        android:layout_height="54dp"
+        android:layout_width="317dp"
+        android:layout_height="66dp"
         android:layout_above="@+id/textView13"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="-473dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="-406dp"
         android:text="Volunteer's number: "
         android:textStyle="bold" />
 
