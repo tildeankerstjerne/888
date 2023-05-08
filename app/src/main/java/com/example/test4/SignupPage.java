@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import android.content.ContentValues;
 
 public class SignupPage extends AppCompatActivity {
-// creating variables for our edittext, button and dbhandler
+    // creating variables for our edittext, button and dbhandler
     private EditText _username, _password, _telephone;
     private Spinner languageSpinner;
     private String[] languagesArray;
@@ -66,7 +66,9 @@ public class SignupPage extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLanguage = parent.getItemAtPosition(position).toString();
-                if (!selectedLanguagesList.contains(selectedLanguage)) {
+                if (selectedLanguage.equals(languagesArray[0])) { // check if selected item is the default value
+                    selectedLanguagesList.clear(); // clear the list if the default value is selected
+                } else if (!selectedLanguagesList.contains(selectedLanguage)) {
                     selectedLanguagesList.add(selectedLanguage);
                 }
             }
@@ -75,6 +77,9 @@ public class SignupPage extends AppCompatActivity {
                 // do nothing
             }
         });
+
+        // Clear the selected item in the spinner
+        //languageSpinner.setSelection(0);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -103,7 +108,10 @@ public class SignupPage extends AppCompatActivity {
                         // course to sqlite data and pass all our values to it.
                         String languages = String.join(",", selectedLanguagesList);
                         dbHandler.addRefugeeTable(username, password, telephone, selectedLanguagesList);
-                        openSignupCriteria();
+                        int userId = 1; // replace with actual user ID
+                        saveUserId(userId);
+                        openRefugeeMainPage();
+
                     }
                 } else if (radioButtonVolunteer.isChecked()) {
                     // below line is to get data from all edit text fields.
@@ -118,24 +126,38 @@ public class SignupPage extends AppCompatActivity {
                     } else {
                         String languages = String.join(",", selectedLanguagesList);
                         dbHandler.addVolunteerTable(username, password, telephone, selectedLanguagesList);
-                        openSignupCriteria();
+                        int userId = 1; // replace with actual user ID
+                        saveUserId(userId);
+                        openVolunteerMainPage();
                     }
                 }
 
             }
-            public void openSignupCriteria() {
-                Intent intent = new Intent(SignupPage.this,SignupCriteria.class);
-                startActivity(intent);
-            }
         });
     }
-    Intent intent = getIntent();
-    int userId = intent.getIntExtra("user_id", 0);
 
+    private void saveUserId(int userId) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("userId", userId);
+        editor.apply();
+    }
+
+    private void openRefugeeMainPage(){
+        Intent intent = new Intent(SignupPage.this, RefugeeMainPage.class);
+        startActivity(intent);
+    }
+    private void openVolunteerMainPage(){
+        Intent intent = new Intent(SignupPage.this, VolunteerMainPage.class);
+        startActivity(intent);
+    }
+    private int getUserId() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        return sharedPreferences.getInt("userId", -1); // default value of -1 if not found
+    }
     protected void onDestroy() {
         super.onDestroy();
         dbHandler.close();
     }
 }
-
-

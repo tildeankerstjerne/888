@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +16,15 @@ public class VolunteerMainPage extends AppCompatActivity {
     private ImageView volunteer_menu_main;
 
     private ImageView baseline_circle;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_main_page);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", -1);
 
         volunteer_menu_main = (ImageView) findViewById(R.id.volunteer_menu_main);
         volunteer_menu_main.setOnClickListener(new View.OnClickListener() {
