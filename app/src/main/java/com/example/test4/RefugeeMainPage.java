@@ -5,6 +5,7 @@ import static com.example.test4.DatabaseHandler.REFUGEE_COLUMN_LANGUAGE;
 import static com.example.test4.DatabaseHandler.REFUGEE_TABLE_NAME;
 import static com.example.test4.DatabaseHandler.VOLUNTEER_COLUMN_LANGUAGE;
 import static com.example.test4.DatabaseHandler.VOLUNTEER_COLUMN_NUMBER;
+import static com.example.test4.DatabaseHandler.VOLUNTEER_COLUMN_STATUS;
 import static com.example.test4.DatabaseHandler.VOLUNTEER_COLUMN_USERNAME;
 import static com.example.test4.DatabaseHandler.VOLUNTEER_TABLE_NAME;
 
@@ -25,20 +26,20 @@ public class RefugeeMainPage extends AppCompatActivity {
 
     private Button button_emergency_refugee_main, button_menu_refugee_main, button_start_call_refugee_main, show_number_refugeemain;
     private TextView volunteerNumberTextView;
+    private SharedPreferences sharedPreferences;
     private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refugee_main_page);
-
-        volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);
-
-        //Intent intent = getIntent();
-        //int refugeeId = intent.getIntExtra("refugeeId", 0);
+        sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE);
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
+
+        volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);
+
 
         if (userId != -1) {
             Toast.makeText(RefugeeMainPage.this, "userId is known" + userId, Toast.LENGTH_SHORT).show();
@@ -66,8 +67,9 @@ public class RefugeeMainPage extends AppCompatActivity {
                         }
                         volunteerQuery += VOLUNTEER_COLUMN_LANGUAGE + " LIKE '%" + refugeeLanguages[i] + "%'";
                     }
-                    volunteerQuery += " ORDER BY RANDOM() LIMIT 1";
+                    volunteerQuery += " AND " + VOLUNTEER_COLUMN_STATUS + " = 'active' ORDER BY RANDOM() LIMIT 1";
                     Cursor volunteerCursor = db.rawQuery(volunteerQuery, null);
+
                     if (volunteerCursor.moveToFirst()) {
                         String volunteerNumber = volunteerCursor.getString(volunteerCursor.getColumnIndex(VOLUNTEER_COLUMN_NUMBER));
                         TextView volunteerNumberTextView = findViewById(R.id.textview_volunteer_number);

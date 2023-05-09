@@ -25,9 +25,11 @@ public class RefugeeNotes extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
+
         text_note = findViewById(R.id.text_note);
 
         DatabaseHandler dbHandler = new DatabaseHandler(RefugeeNotes.this);
+
         List<String> allNotes = dbHandler.getAllNotes(userId);
         String notesString = TextUtils.join("\n", allNotes);
         text_note.setText("Your notes:\n" + notesString);
