@@ -39,7 +39,7 @@ public class VolunteerMenu extends AppCompatActivity {
         });
     }
     public void openProfile(){
-        Intent intent = new Intent(this, RefugeeProfile.class);
+        Intent intent = new Intent(this, VolunteerProfile.class);
         startActivity(intent);
     }
     public void openLogoff(){

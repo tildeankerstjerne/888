@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Test4"
         tools:targetApi="31">
         <activity
+            android:name=".VolunteerProfile"
+            android:exported="false" />
+        <activity
             android:name=".RefugeeCallEnded"
             android:exported="false" />
         <activity
