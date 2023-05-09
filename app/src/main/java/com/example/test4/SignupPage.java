@@ -19,6 +19,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
 import android.content.ContentValues;
 
 public class SignupPage extends AppCompatActivity {
@@ -36,12 +38,16 @@ public class SignupPage extends AppCompatActivity {
 
     private DatabaseHandler dbHandler;
     private ArrayList<String> selectedLanguagesList;
+    private SharedPreferences sharedPreferences;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_page);
+
 
         // initializing all our variables.
         _username = findViewById(R.id.editText_username_signuppage);
@@ -52,7 +58,8 @@ public class SignupPage extends AppCompatActivity {
         radioButtonRefugee = findViewById(R.id.radioButtonRefugee);
         radioButtonVolunteer = findViewById(R.id.radioButtonVolunteer);
 
-        // creating a new dbhandler class
+
+        // creating a new dbhandler object
         // and passing our context to it.
         dbHandler = new DatabaseHandler(SignupPage.this);
 
@@ -78,9 +85,6 @@ public class SignupPage extends AppCompatActivity {
             }
         });
 
-        // Clear the selected item in the spinner
-        //languageSpinner.setSelection(0);
-
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -89,7 +93,6 @@ public class SignupPage extends AppCompatActivity {
             }
         });
 
-        // below line is to add on click listener for our add course button.
         ContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +101,7 @@ public class SignupPage extends AppCompatActivity {
                     String username = _username.getText().toString();
                     String password = _password.getText().toString();
                     String telephone = _telephone.getText().toString();
+                    Refugees refugees = dbHandler.getRefugees(username, password);
 
                     // validating if the text fields are empty or not.
                     if (username.isEmpty() || password.isEmpty() || telephone.isEmpty()) {
@@ -108,16 +112,17 @@ public class SignupPage extends AppCompatActivity {
                         // course to sqlite data and pass all our values to it.
                         String languages = String.join(",", selectedLanguagesList);
                         dbHandler.addRefugeeTable(username, password, telephone, selectedLanguagesList);
-                        int userId = 1; // replace with actual user ID
-                        saveUserId(userId);
-                        openRefugeeMainPage();
+                        //saveUserId(Integer.parseInt(refugees.getID()));
+                        openLogin();
 
                     }
+
                 } else if (radioButtonVolunteer.isChecked()) {
                     // below line is to get data from all edit text fields.
                     String username = _username.getText().toString();
                     String password = _password.getText().toString();
                     String telephone = _telephone.getText().toString();
+                    Volunteers volunteers = dbHandler.getVolunteers(username, password);
 
                     // validating if the text fields are empty or not.
                     if (username.isEmpty() || password.isEmpty() || telephone.isEmpty()) {
@@ -126,9 +131,8 @@ public class SignupPage extends AppCompatActivity {
                     } else {
                         String languages = String.join(",", selectedLanguagesList);
                         dbHandler.addVolunteerTable(username, password, telephone, selectedLanguagesList);
-                        int userId = 1; // replace with actual user ID
-                        saveUserId(userId);
-                        openVolunteerMainPage();
+                       // saveUserId(Integer.parseInt(volunteers.getID()));
+                        openLogin();
                     }
                 }
 
@@ -136,26 +140,25 @@ public class SignupPage extends AppCompatActivity {
         });
     }
 
-    private void saveUserId(int userId) {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("userId", userId);
-        editor.apply();
+    private void openLogin(){
+        Intent intent = new Intent(SignupPage.this, LoginPage.class);
+        startActivity(intent);
     }
 
-    private void openRefugeeMainPage(){
+   /* private void openRefugeeMainPage(){
+       // int userId = getUserId();
         Intent intent = new Intent(SignupPage.this, RefugeeMainPage.class);
+       // intent.putExtra("userId", userId);
         startActivity(intent);
-    }
-    private void openVolunteerMainPage(){
+    }*/
+    /*private void openVolunteerMainPage(){
+       // int userId = getUserId();
         Intent intent = new Intent(SignupPage.this, VolunteerMainPage.class);
+       // intent.putExtra("userId", userId);
         startActivity(intent);
-    }
-    private int getUserId() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        return sharedPreferences.getInt("userId", -1); // default value of -1 if not found
-    }
+    }*/
+
+
     protected void onDestroy() {
         super.onDestroy();
         dbHandler.close();

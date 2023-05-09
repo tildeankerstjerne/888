@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class VolunteerMainPage extends AppCompatActivity {
 
@@ -17,11 +20,16 @@ public class VolunteerMainPage extends AppCompatActivity {
 
     private ImageView baseline_circle;
     private int userId;
+    private RadioGroup radioGroupAvailability;
+    private RadioButton radioButtonActive, radioButtonInactive;
+    private DatabaseHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_main_page);
+
+        dbHandler = new DatabaseHandler(VolunteerMainPage.this);
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
@@ -35,17 +43,29 @@ public class VolunteerMainPage extends AppCompatActivity {
             }
         });
 
-        final ImageView volunteer_availability = findViewById(R.id.volunteer_availability);
-        volunteer_availability.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("PrivateResource")
+        radioGroupAvailability = findViewById(R.id.radioGroupAvailability);
+        radioButtonActive = findViewById(R.id.radioButtonActive);
+        radioButtonInactive = findViewById(R.id.radioButtonInactive);
+
+        radioGroupAvailability.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                volunteer_availability.setBackgroundColor(getResources().getColor(com.google.android.material.R.color.design_fab_shadow_mid_color));
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton checkedRadioButton = findViewById(checkedId);
+                Toast.makeText(VolunteerMainPage.this, "Selected: " + checkedRadioButton.getText(), Toast.LENGTH_SHORT).show();
+                if (radioButtonActive.isChecked()) {
+                    String status = "active";
+                    dbHandler.addStatus(userId, status);
+                }
+                else if(radioButtonInactive.isChecked()){
+                    String status = "inactive";
+                    dbHandler.addStatus(userId, status);
+                }
             }
         });
 
     }
-    public void openMenu(){
+
+    public void openMenu() {
         Intent intent = new Intent(this, VolunteerMenu.class);
         startActivity(intent);
     }

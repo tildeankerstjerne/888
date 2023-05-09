@@ -155,15 +155,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // database after adding database.
         db.close();
     }
+    public void addStatus(int userId, String status){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(VOLUNTEER_COLUMN_STATUS, status);
+        String whereClause = VOLUNTEER_COLUMN_ID + "=?";
+        String[] whereArgs = { String.valueOf(userId) };
+        db.update(VOLUNTEER_TABLE_NAME, values, whereClause, whereArgs);
+        db.close();
+    }
 
-   /* public void AddNotesTable(int refugeeId, String notes) {
+
+   /*public void AddNotesTable(int refugeeId, String notes) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("refugee_id", refugeeId);
         contentValues.put("notes", notes);
         db.insert("notes", null, contentValues);
         db.close();
-    } */
+    }*/
 
     // In order to update the table, we need to delete it and create a new upgraded one
     @Override
@@ -209,6 +219,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             return null;
         }
     }
+    /*public Volunteers getStatus(String status){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(VOLUNTEER_TABLE_NAME, new String[]{VOLUNTEER_COLUMN_ID, VOLUNTEER_COLUMN_STATUS},
+                VOLUNTEER_COLUMN_STATUS + "=?", new String[]{status},
+                null, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            Volunteers volunteers = new Volunteers (cursor.getString(0), cursor.getString(5));
+            cursor.close();
+            db.close();
+            return volunteers;
+        } else {
+            return null;
+        }
+
+    } */
     public List<String> getAllNotes(int userId) {
         List<String> notesList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

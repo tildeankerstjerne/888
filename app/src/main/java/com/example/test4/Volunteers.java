@@ -7,6 +7,10 @@ public class Volunteers {
     private String number;
     private String language;
 
+    private String status;
+
+
+
     public String getID() {
         return ID;
     }
@@ -45,6 +49,14 @@ public class Volunteers {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Volunteers(String ID, String username, String password) {
