@@ -10,10 +10,9 @@ import android.widget.Button;
 
 public class RefugeeEditProfile extends AppCompatActivity {
 
-    private Button button_back_edit_profile;
-    private Button button_saveprofile_editprofile;
-
+    private Button button_back_edit_profile, button_saveprofile_editprofile;
     private int userId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

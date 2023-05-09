@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 public class RefugeeProfile extends AppCompatActivity {
-    private Button button_edit_refugee_profile;
-    private Button button_back_profile;
+    private Button button_edit_refugee_profile, button_back_profile;
+    private TextView text_speaklanguage_refugee, text_username_refugee, text_number_refugee;
     private int userId;
 
     @Override
@@ -22,7 +25,28 @@ public class RefugeeProfile extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
 
+        DatabaseHandler dbHandler = new DatabaseHandler(RefugeeProfile.this);
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+
+        text_username_refugee = (TextView) findViewById(R.id.text_username_refugee);
+        text_number_refugee = (TextView) findViewById(R.id.text_number_refugee);
+        text_speaklanguage_refugee = (TextView) findViewById(R.id.text_speaklanguage_refugee);
         button_edit_refugee_profile = (Button) findViewById(R.id.button_edit_refugee_profile);
+
+        // query the database to retrieve the refugee's information
+        String refugeeQuery = "SELECT * FROM " + DatabaseHandler.REFUGEE_TABLE_NAME + " WHERE " + DatabaseHandler.REFUGEE_COLUMN_ID + " = " + userId;
+        Cursor refugeeCursor = db.rawQuery(refugeeQuery, null);
+        if (refugeeCursor.moveToFirst()) {
+            String spokenLanguages = refugeeCursor.getString(refugeeCursor.getColumnIndex("language"));
+            text_speaklanguage_refugee.setText("Your languages: " + spokenLanguages);
+            String usernameRefugee = refugeeCursor.getString(refugeeCursor.getColumnIndex("username"));
+            text_username_refugee.setText("Your username: " + usernameRefugee);
+            String numberRefugee = refugeeCursor.getString(refugeeCursor.getColumnIndex("number"));
+            text_number_refugee.setText("Your number: " + numberRefugee);
+        }
+        refugeeCursor.close();
+        db.close();
+
         button_edit_refugee_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +54,7 @@ public class RefugeeProfile extends AppCompatActivity {
             }
         });
 
-        button_back_profile = (Button) findViewById(R.id.button_back_profile);
+        button_back_profile = (Button) findViewById(R.id.button_back_refugee);
         button_back_profile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

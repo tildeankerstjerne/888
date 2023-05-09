@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".RefugeeProfile">
+    tools:context=".VolunteerProfile">
 
 
     <Button
-        android:id="@+id/button_edit_refugee_profile"
+        android:id="@+id/button_edit_volunteer_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
@@ -17,13 +16,13 @@
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="2dp"
         android:text="@string/edit_refugee_notes"
-        app:layout_constraintBottom_toTopOf="@+id/text_speaklanguage_refugee"
+        app:layout_constraintBottom_toTopOf="@+id/text_speaklanguage_volunteer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/picture_profileicon_profile" />
 
     <Button
-        android:id="@+id/button_back_refugee"
+        android:id="@+id/button_back_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
@@ -34,10 +33,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_refugee" />
+        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_volunteer" />
 
     <TextView
-        android:id="@+id/text_speaklanguage_refugee"
+        android:id="@+id/text_speaklanguage_volunteer"
         android:layout_width="398dp"
         android:layout_height="31dp"
         android:layout_marginStart="6dp"
@@ -47,11 +46,11 @@
         android:text="@string/speaklanguage_refugeeprofile"
         android:textColor="#6246EA"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_refugee"
+        app:layout_constraintBottom_toTopOf="@+id/button_back_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_edit_refugee_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/button_edit_volunteer_profile" />
 
 
     <ImageView
@@ -63,29 +62,29 @@
         android:layout_marginEnd="167dp"
         android:layout_marginBottom="1dp"
         android:src="@drawable/baseline_person_24"
-        app:layout_constraintBottom_toTopOf="@+id/button_edit_refugee_profile"
+        app:layout_constraintBottom_toTopOf="@+id/button_edit_volunteer_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="man person"/>
 
     <TextView
-        android:id="@+id/text_username_refugee"
+        android:id="@+id/text_username_volunteer"
         android:layout_width="402dp"
         android:layout_height="39dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="36dp"
         android:text="username"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_refugee"
+        app:layout_constraintBottom_toTopOf="@+id/button_back_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_refugee" />
+        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_volunteer" />
 
     <TextView
-        android:id="@+id/text_number_refugee"
-        android:layout_width="397dp"
-        android:layout_height="51dp"
+        android:id="@+id/text_number_volunteer"
+        android:layout_width="412dp"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="5dp"
@@ -93,9 +92,7 @@
         android:text="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_back_refugee"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintTop_toBottomOf="@+id/button_back_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
