@@ -5,8 +5,20 @@
     <string name="signup">اشتراك</string>
 
     <string name="have_account">هل لديك حساب؟</string>
+    <string name="button_signup_choosesignuplogin">اشتراك</string>
     <string name="sign_up">اشتراك</string>
     <string name="back">عُد</string>
+    <string name="button_startcall_refugeemain">ابدأ الاتصال</string>
+    <string name="textview_welcome_refugeemain">مرحباً،</string>
+    <string name="button_emergencyinfo_refugeemain">معلومات الطوارئ</string>
+    <string name="button_profile_refugeemenu">حساب تعريفي</string>
+    <string name="button_notes_refugeemenu">ملحوظات</string>
+    <string name="button_logoff_refugeemenu">إطفاء</string>
+    <string name="textview_welcome_volunteermain">مرحباً،</string>
+    <string name="radiobutton_active">نشيط</string>
+    <string name="radiobutton_inactive">غير نشط</string>
+    <string name="button_profile_volunteermenu">حساب تعريفي</string>
+    <string name="button_logoff_volunteermenu">إطفاء</string>
     <string name="username_refugeeprofile">اسم المستخدم</string>
     <string name="role_volunteer_refugeeprofile">متطوع</string>
     <string name="role_refugee_refugeeprofile">لاجئ</string>
@@ -29,8 +41,7 @@
     <string name="activity_volunteer_main_page3">يمكنك استقبال المكالمات</string>
     <string name="activity_volunteer_main_page4">لا يمكنك استقبال المكالمات</string>
     <string name="activity_login_page0">تسجيل الدخول</string>
-    <string name="Activity_login_page1">لست مستخدم؟ قم بإنشاء مستخدم</string>
-    <string name="Activity_choose_app_language0">مرحباً</string>
+    <string name="Activity_login_page1"><U>لست مستخدم؟ قم بإنشاء مستخدم</U></string>
     <string name="Activity_choose_app_language1">عربي</string>
     <string name="Activity_choose_app_language2">Dansk</string>
     <string name="Activity_choose_app_language3">English</string>
@@ -44,4 +55,14 @@
     <string name="Activity_choose_app_language11">اردو</string>
     <string name="activity_emergency0">رقم الطوارئ العاجل: 112</string>
     <string name="activity_emergency1">قسم الشرطة: 114</string>
+    <string name="text_login_choosesignuplogin"><U>هل لديك حساب؟</U></string>
+    <string name="ActivityMain_Welcome_chooseapplanguage">مرحباً</string>
+    <string name="signuppage_spokenlanguages_text">أنا أتحدث اللغة (اللغات) التالية:</string>
+    <string name="continue_button">يكمل</string>
+    <string name="edittext_username_signuppage">اسم المستخدم</string>
+    <string name="edittext_password_signuppage">كلمة المرور</string>
+    <string name="edittext_number_signuppage">رقم الهاتف المحمول</string>
+    <string name="radiobutton_refugee">لاجئ</string>
+    <string name="radiobutton_volunteer">متطوع</string>
+    <string name="Activity_choose_app_language0">مرحباً</string>
 </resources>

@@ -1,16 +1,63 @@
 <resources>
-
+    <!-- MainActivity, ChooseSignupLogin, SignupPage, LoginPage -->
     <string name="app_name" translatable="false">App name</string>
     <string name="login"><U>Already have an account?</U></string>
     <string name="signup">Sign up</string>
-
     <string name="have_account">Already have an account?</string>
     <string name="sign_up">Sign up</string>
+    <string name="signuppage_spokenlanguages_text">I speak following language(s):</string>
+    <string name="edittext_username_signuppage">    Username</string>
+    <string name="edittext_password_signuppage">    Password</string>
+    <string name="edittext_number_signuppage">    Mobile number</string>
+    <string name="radiobutton_refugee">Refugee</string>
+    <string name="radiobutton_volunteer">Volunteer</string>
+    <string name="continue_button">Continue</string>
     <string name="back">Back</string>
+
+    <!-- RefugeeMainPage -->
+    <string name="button_startcall_refugeemain">Start call</string>
+    <string name="textview_welcome_refugeemain">Welcome,</string>
+    <string name="button_emergencyinfo_refugeemain">Emergency information</string>
+
+    <!-- RefugeeCall -->
+
+    <!-- RefugeeCallEnded -->
+
+    <!-- RefugeeMenu -->
+    <string name="button_profile_refugeemenu">Profile</string>
+    <string name="button_notes_refugeemenu">Notes</string>
+    <string name="button_logoff_refugeemenu">Log off</string>
+
+    <!-- RefugeeProfile -->
+
+    <!-- RefugeeNotes -->
+
+    <!-- RefugeeEditNotes -->
+
+    <!-- RefugeeEditProfile -->
+    <string name="speaklanguage_refugeeprofile">I speak the following languages:</string>
+    <string name="mobilenumber_refugeeeditprofile">Mobile number</string>
+
+
+
+
+    <!-- VolunteerMainPage -->
+    <string name="textview_welcome_volunteermain">Welcome,</string>
+    <string name="radiobutton_active">Active</string>
+    <string name="radiobutton_inactive">Inactive</string>
+
+    <!-- VolunteerMenu -->
+    <string name="button_profile_volunteermenu">Profile</string>
+    <string name="button_logoff_volunteermenu">Log off</string>
+
+    <!-- VolunteerProfile -->
+
+
+
+    <!-- Other -->
     <string name="username_refugeeprofile">Username</string>
     <string name="role_volunteer_refugeeprofile">Volunteer</string>
     <string name="role_refugee_refugeeprofile">Refugee</string>
-    <string name="speaklanguage_refugeeprofile">I speak the following languages:</string>
     <string name="applanguage_refugeeprofile">App Language:</string>
     <string name="saveprofile">Save profile</string>
     <string name="dato_refugee_notes">indsæt dato</string>
@@ -29,7 +76,7 @@
     <string name="activity_volunteer_main_page3">You can receive calls</string>
     <string name="activity_volunteer_main_page4">You cant receive calls</string>
     <string name="activity_login_page0">Login</string>
-    <string name="Activity_login_page1">Not a user? Create a user</string>
+    <string name="Activity_login_page1"><U>Not a user? Create a user</U></string>
     <string name="Activity_choose_app_language0">Welcome!</string>
     <string name="Activity_choose_app_language1">عربي</string>
     <string name="Activity_choose_app_language2">Dansk</string>
@@ -45,6 +92,7 @@
     <string name="activity_emergency0">Urgent emergency number: 112</string>
     <string name="activity_emergency1">Police department: 114</string>
 
+    <!-- Array af strings used in the SignupPage activity -->
     <string-array name="languages_array">
         <item>Danish</item>
         <item>English</item>

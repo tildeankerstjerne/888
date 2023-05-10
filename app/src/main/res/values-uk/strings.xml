@@ -5,8 +5,20 @@
     <string name="signup">Реєстрація</string>
 
     <string name="have_account">Вже є аккаунт?</string>
-    <string name="sign_up">Реєстрація</string>
+    <string name="button_signup_choosesignuplogin">Зареєструватися</string>
+    <string name="sign_up">Зареєструватися</string>
     <string name="back">назад</string>
+    <string name="button_startcall_refugeemain">Розпочати виклик</string>
+    <string name="textview_welcome_refugeemain">Ласкаво просимо,</string>
+    <string name="button_emergencyinfo_refugeemain">Екстрена інформація</string>
+    <string name="button_profile_refugeemenu">Профіль</string>
+    <string name="button_notes_refugeemenu">Примітки</string>
+    <string name="button_logoff_refugeemenu">Вийти</string>
+    <string name="textview_welcome_volunteermain">Ласкаво просимо,</string>
+    <string name="radiobutton_active">Активний</string>
+    <string name="radiobutton_inactive">Неактивний</string>
+    <string name="button_profile_volunteermenu">Профіль</string>
+    <string name="button_logoff_volunteermenu">Вийти</string>
     <string name="username_refugeeprofile">ім\'я користувача</string>
     <string name="role_volunteer_refugeeprofile">волонтер</string>
     <string name="role_refugee_refugeeprofile">біженець</string>
@@ -29,8 +41,8 @@
     <string name="activity_volunteer_main_page3">Ви можете приймати дзвінки</string>
     <string name="activity_volunteer_main_page4">Ви не можете приймати дзвінки</string>
     <string name="activity_login_page0">логін</string>
-    <string name="Activity_login_page1">Ви не користувач? Створіть користувача</string>
-    <string name="Activity_choose_app_language0">Ласкаво просимоً</string>
+    <string name="Activity_login_page1"><U>Ви не користувач? Створіть користувача</U></string>
+    <string name="Activity_choose_app_language0">Ласкаво просимо, ім\'я!</string>
     <string name="Activity_choose_app_language1">عربي</string>
     <string name="Activity_choose_app_language2">Dansk</string>
     <string name="Activity_choose_app_language3">English</string>
@@ -44,4 +56,13 @@
     <string name="Activity_choose_app_language11">اردو</string>
     <string name="activity_emergency0">номер термінової екстреної допомоги: 112</string>
     <string name="activity_emergency1">Відділ поліції: 114</string>
+    <string name="text_login_choosesignuplogin"><U>Вже зареєструвалися??</U></string>
+    <string name="ActivityMain_Welcome_chooseapplanguage">Ласкаво просимоً</string>
+    <string name="signuppage_spokenlanguages_text">Я розмовляю такими мовами:</string>
+    <string name="continue_button">Продовжити</string>
+    <string name="edittext_username_signuppage">Ім\'я користувача</string>
+    <string name="edittext_password_signuppage">Пароль</string>
+    <string name="edittext_number_signuppage">Номер мобільного</string>
+    <string name="radiobutton_refugee">Біженець</string>
+    <string name="radiobutton_volunteer">Волонтер</string>
 </resources>

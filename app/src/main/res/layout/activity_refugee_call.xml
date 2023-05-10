@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
     tools:context=".RefugeeCall">
 
     <EditText
@@ -12,7 +13,11 @@
         android:layout_height="68dp"
         android:ems="10"
         android:inputType="phone"
+        android:background="@drawable/customborder"
         android:hint="Write number"
+        android:padding="12dp"
+        android:textColorHint="@color/lightgrey"
+        android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -27,6 +32,7 @@
         android:layout_marginTop="96dp"
         android:clickable="true"
         android:contentDescription="call"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
