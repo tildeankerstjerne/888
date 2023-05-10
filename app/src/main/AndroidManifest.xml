@@ -26,9 +26,6 @@
             android:name=".ChooseSignupLogin"
             android:exported="false" />
         <activity
-            android:name=".ChooseAppLanguage"
-            android:exported="false" />
-        <activity
             android:name=".VolunteerMenu"
             android:exported="false" />
         <activity

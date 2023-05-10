@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -27,6 +29,9 @@ public class VolunteerMainPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();  // this line hides the actionbar
         setContentView(R.layout.activity_volunteer_main_page);
 
         dbHandler = new DatabaseHandler(VolunteerMainPage.this);

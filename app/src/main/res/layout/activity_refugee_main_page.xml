@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6D6D6"
+    android:background="@color/backgroundcolor"
     tools:context=".RefugeeMainPage">
 
     <Button
         android:id="@+id/button_start_call_refugee_main"
-        android:layout_width="233dp"
-        android:layout_height="219dp"
+        android:layout_width="229dp"
+        android:layout_height="237dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="278dp"
-        android:text="Start call"
+        android:text="@string/button_startcall_refugeemain"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:cornerRadius="250dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_emergency_refugee_main"
+        app:cornerRadius="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.153" />
+
 
     <Button
         android:id="@+id/button_emergency_refugee_main"
-        android:layout_width="423dp"
-        android:layout_height="88dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="-12dp"
-        android:layout_marginBottom="-11dp"
         android:backgroundTint="#D66850"
-        android:text="Emergency"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="665dp" />
+        android:text="@string/button_emergencyinfo_refugeemain"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996" />
 
     <Button
         android:id="@+id/button_menu_refugee_main"
@@ -48,46 +51,71 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_start_call_refugee_main"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="148dp"
-        android:text="Menu" />
-
+        android:text="Menu"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
 
     <TextView
         android:id="@+id/textview_volunteer_number"
-        android:layout_width="317dp"
-        android:layout_height="66dp"
+        android:layout_width="266dp"
+        android:layout_height="35dp"
         android:layout_above="@+id/textView13"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="-406dp"
+        android:layout_marginTop="20dp"
         android:text="Volunteer's number: "
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_start_call_refugee_main"
+        app:layout_constraintVertical_bias="0.071" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="545dp"
-        android:text="Welcome Zahraa"
+        android:text="@string/textview_welcome_refugeemain"
         android:textAlignment="center"
         android:textColor="#D66850"
-        android:textSize="34sp" />
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178" />
 
     <Button
         android:id="@+id/show_number_refugeemain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_emergency_refugee_main"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="57dp"
-        android:text="Button" />
-</RelativeLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="11dp"
+        android:backgroundTint="#6246EA"
+        android:text="Find a volunteer"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_volunteer_number"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

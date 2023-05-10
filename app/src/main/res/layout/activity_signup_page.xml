@@ -4,140 +4,177 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6D6D6"
+    android:background="@color/backgroundcolor"
     tools:context=".SignupPage">
 
     <Button
         android:id="@+id/button_continue_signup"
         android:layout_width="260dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="#6246EA"
-        android:text="Continue"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintTop_toBottomOf="@+id/language_spinner" />
 
     <TextView
         android:id="@+id/textview_signup_signuppage"
-        android:layout_width="180dp"
-        android:layout_height="59dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="Sign up "
+        android:text="@string/signup"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#D66850"
-        android:textSize="24sp"
+        android:textColor="@color/red"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.149" />
 
     <EditText
         android:id="@+id/editText_username_signuppage"
-        android:layout_width="322dp"
-        android:layout_height="72dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
+        android:background="@drawable/customborder"
+        android:padding="12dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/edittext_username_signuppage"
+        android:textColorHint="@color/lightgrey"
         android:inputType="text"
+        android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_signup_signuppage"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <EditText
         android:id="@+id/editText_password_signuppage"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/customborder"
         android:ems="10"
-        android:hint="Password"
+        android:padding="12dp"
+        android:textColor="@color/grey"
+        android:hint="@string/edittext_password_signuppage"
         android:inputType="textPassword"
+        android:textColorHint="@color/lightgrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_username_signuppage"
+        app:layout_constraintVertical_bias="0.026" />
 
     <EditText
         android:id="@+id/editText_number_signuppage"
-        android:layout_width="323dp"
-        android:layout_height="55dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/customborder"
+        android:padding="12dp"
         android:ems="10"
-        android:hint="Telephone number"
-        android:inputType="textPassword"
+        android:hint="@string/edittext_number_signuppage"
+        android:inputType="text"
+        android:textColor="@color/grey"
+        android:textColorHint="@color/lightgrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_signuppage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textview_signup_signuppage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/editText_number_signuppage"
+        app:layout_constraintVertical_bias="0.083">
 
         <RadioButton
             android:id="@+id/radioButtonRefugee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Refugee" />
+            android:text="@string/radiobutton_refugee"
+            android:textColor="@color/grey"
+            android:buttonTint="@color/purple_500"/>
 
         <RadioButton
             android:id="@+id/radioButtonVolunteer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volunteer"
+            android:text="@string/radiobutton_volunteer"
+            android:textColor="@color/grey"
             tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="48dp" />
+            tools:layout_editor_absoluteY="48dp"
+            android:buttonTint="@color/purple_500"/>
 
     </RadioGroup>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/signuppage_spokenlanguages_text"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.158">
+
+    </TextView>
+
     <Spinner
         android:id="@+id/language_spinner"
-        android:layout_width="374dp"
-        android:layout_height="69dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/button_continue_signup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_number_signuppage"
-        app:layout_constraintVertical_bias="0.918" />
-
+        app:layout_constraintVertical_bias="0.569" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

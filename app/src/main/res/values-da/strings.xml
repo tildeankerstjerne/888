@@ -5,8 +5,20 @@
     <string name="signup">Tilmeld</string>
 
     <string name="have_account">Allerede en bruger?</string>
+    <string name="button_signup_choosesignuplogin">Tilmeld</string>
     <string name="sign_up">Tilmeld</string>
     <string name="back">Tilbage</string>
+    <string name="button_startcall_refugeemain">Påbegynd opkald</string>
+    <string name="textview_welcome_refugeemain">Velkommen,</string>
+    <string name="button_emergencyinfo_refugeemain">Nødsinformation</string>
+    <string name="button_profile_refugeemenu">Profil</string>
+    <string name="button_notes_refugeemenu">Noter</string>
+    <string name="button_logoff_refugeemenu">Log af</string>
+    <string name="textview_welcome_volunteermain">Velkommen,</string>
+    <string name="radiobutton_active">Aktiv</string>
+    <string name="radiobutton_inactive">Inaktiv</string>
+    <string name="button_profile_volunteermenu">Profil</string>
+    <string name="button_logoff_volunteermenu">Log af</string>
     <string name="username_refugeeprofile">Brugernavn</string>
     <string name="role_volunteer_refugeeprofile">Frivillig</string>
     <string name="role_refugee_refugeeprofile">Flygtning</string>
@@ -29,8 +41,7 @@
     <string name="activity_volunteer_main_page3">Du kan modtage opkald</string>
     <string name="activity_volunteer_main_page4">Du kan ikke modtage opkald</string>
     <string name="activity_login_page0">Log ind</string>
-    <string name="Activity_login_page1">Ikke en bruger? Tilmeld dig</string>
-    <string name="Activity_choose_app_language0">Velkommen!</string>
+    <string name="Activity_login_page1"><U>Ikke en bruger? Tilmeld dig</U></string>
     <string name="Activity_choose_app_language1">عربي</string>
     <string name="Activity_choose_app_language2">Dansk</string>
     <string name="Activity_choose_app_language3">English</string>
@@ -44,4 +55,14 @@
     <string name="Activity_choose_app_language11">اردو</string>
     <string name="activity_emergency0">Urgent emergency number: 112</string>
     <string name="activity_emergency1">Politi: 114</string>
+    <string name="text_login_choosesignuplogin"><U>Allerede en bruger?</U></string>
+    <string name="ActivityMain_Welcome_chooseapplanguage">Velkommen</string>
+    <string name="signuppage_spokenlanguages_text">Jeg forstår følgende sprog:</string>
+    <string name="continue_button">Fortsæt</string>
+    <string name="edittext_username_signuppage">"    Brugernavn"</string>
+    <string name="edittext_password_signuppage">"    Kodeord"</string>
+    <string name="edittext_number_signuppage">"    Mobil nummer"</string>
+    <string name="radiobutton_refugee">Flygtning</string>
+    <string name="radiobutton_volunteer">Frivillig</string>
+    <string name="Activity_choose_app_language0">Velkommen!</string>
 </resources>

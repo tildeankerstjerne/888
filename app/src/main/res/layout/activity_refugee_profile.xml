@@ -4,98 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/backgroundcolor"
     tools:context=".RefugeeProfile">
 
 
     <Button
         android:id="@+id/button_edit_refugee_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="2dp"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:text="@string/edit_refugee_notes"
-        app:layout_constraintBottom_toTopOf="@+id/text_speaklanguage_refugee"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picture_profileicon_profile" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
 
     <Button
         android:id="@+id/button_back_refugee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="404dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_refugee" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
 
     <TextView
-        android:id="@+id/text_speaklanguage_refugee"
-        android:layout_width="398dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="49dp"
-        android:text="@string/speaklanguage_refugeeprofile"
-        android:textColor="#6246EA"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_refugee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_edit_refugee_profile" />
 
+        android:id="@+id/textinsert_languages_refugeeprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speaklanguage_refugeeprofile"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_orientation_editprofile"
+        app:layout_constraintVertical_bias="0.045" />
 
     <ImageView
         android:id="@+id/picture_profileicon_profile"
-        android:layout_width="77dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="man person"
         android:src="@drawable/baseline_person_24"
-        app:layout_constraintBottom_toTopOf="@+id/button_edit_refugee_profile"
+        app:layout_constraintBottom_toTopOf="@+id/text_username_refugee"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="man person"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/text_username_refugee"
-        android:layout_width="402dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="36dp"
-        android:text="username"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_refugee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_refugeeprofile"
+        android:textColor="@color/red"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_refugee" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+    <TextView
+        android:id="@+id/text_orientation_editprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_username_refugee"
+        app:layout_constraintVertical_bias="0.006" />
+
+
+    <TextView
+        android:id="@+id/text_speaklanguage_refugee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="392dp"
+        android:text="username"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textinsert_languages_refugeeprofile" />
+
+    <TextView
+        android:id="@+id/text_number_refugeeprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="328dp"
+        android:text="Mobile number"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textinsert_languages_refugeeprofile"
+        app:layout_constraintVertical_bias="0.769" />
 
     <TextView
         android:id="@+id/text_number_refugee"
-        android:layout_width="397dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="299dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="number"
+        android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_back_refugee"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintTop_toBottomOf="@+id/text_number_refugeeprofile"
+        app:layout_constraintVertical_bias="0.044" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,223 +4,206 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/backgroundcolor"
     tools:context=".RefugeeEditProfile">
 
     <Button
         android:id="@+id/button_back_edit_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="18dp"
         android:text="Back"
-        app:layout_constraintBottom_toTopOf="@+id/button_backarrow_profile"
-        app:layout_constraintEnd_toStartOf="@+id/picture_profileicon_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_saveprofile_editprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Save profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_app_language" />
-
-    <TextView
-        android:id="@+id/text_username_profile"
-        android:layout_width="148dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="9dp"
-        android:text="@string/username_refugeeprofile"
-        android:textColor="#D66850"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_volunteer_editprofile"
-        app:layout_constraintEnd_toEndOf="@+id/scroll_speaklanguages_editprofil"
-        app:layout_constraintStart_toStartOf="@+id/button_back_edit_profile"
-        app:layout_constraintTop_toBottomOf="@+id/picture_profileicon_profile" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
 
 
-    <Button
-        android:id="@+id/button_refugee_editprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="22dp"
-        android:text="@string/role_refugee_refugeeprofile"
-        app:layout_constraintEnd_toStartOf="@+id/button_volunteer_editprofile"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_username_profile" />
-
-    <Button
-        android:id="@+id/button_volunteer_editprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="30dp"
-        android:text="@string/role_volunteer_refugeeprofile"
-        app:layout_constraintBottom_toTopOf="@+id/text_speaklanguage_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_refugee_editprofile"
-        app:layout_constraintTop_toBottomOf="@+id/text_username_profile" />
-
-
-    <TextView
-        android:id="@+id/text_applanguage_profile"
-        android:layout_width="219dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="48dp"
-        android:text="@string/preflanguage_refugee_profile"
-        android:textColor="#6246EA"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/scroll_app_language"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_speaklanguages_editprofil" />
-
-    <ImageView
-        android:id="@+id/picture_profileicon_profile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/baseline_person_24"
-        app:layout_constraintBottom_toTopOf="@+id/text_username_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_back_edit_profile"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+    <!--
     <ImageButton
         android:id="@+id/button_backarrow_profile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="115dp"
+        android:layout_height="69dp"
         android:layout_marginStart="27dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="574dp"
         android:contentDescription="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/picture_profileicon_profile"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_back_edit_profile"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/back_arrow" />
+        -->
+
+
+    <Button
+        android:id="@+id/button_saveprofile_editprofile"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="44dp"
+        android:text="Save profile"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/language_spinner"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/text_speaklanguage_profile"
+        android:id="@+id/textview_editprof_refeditprofile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:text="@string/speaklanguage_refugeeprofile"
-        android:textColor="#6246EA"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/scroll_speaklanguages_editprofil"
-        app:layout_constraintEnd_toEndOf="@+id/button_saveprofile_editprofile"
-        app:layout_constraintStart_toStartOf="@+id/text_applanguage_profile"
-        app:layout_constraintTop_toBottomOf="@+id/button_volunteer_editprofile" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Edit profile"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/red"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
 
-    <ScrollView
-        android:id="@+id/scroll_speaklanguages_editprofil"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/text_applanguage_profile"
+    <EditText
+        android:id="@+id/editText_username_signuppage"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="528dp"
+        android:background="@drawable/customborder"
+        android:ems="10"
+        android:hint="@string/edittext_username_signuppage"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="@color/grey"
+        android:textColorHint="@color/lightgrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_editprof_refeditprofile"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editText_password_signuppage"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/customborder"
+        android:ems="10"
+        android:padding="12dp"
+        android:textColor="@color/grey"
+        android:hint="@string/edittext_password_signuppage"
+        android:inputType="textPassword"
+        android:textColorHint="@color/lightgrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_username_signuppage"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <EditText
+        android:id="@+id/editText_number_signuppage"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/customborder"
+        android:padding="12dp"
+        android:ems="10"
+        android:hint="@string/edittext_number_signuppage"
+        android:inputType="text"
+        android:textColor="@color/grey"
+        android:textColorHint="@color/lightgrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_signuppage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_profile"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/editText_number_signuppage"
+        app:layout_constraintVertical_bias="0.083">
 
-        <LinearLayout
-            android:layout_width="300dp"
+        <RadioButton
+            android:id="@+id/radioButtonRefugee"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/behind_text"
-            android:orientation="vertical">
+            android:text="@string/radiobutton_refugee"
+            android:textColor="@color/grey"
+            android:buttonTint="@color/purple_500"/>
 
-            <CheckBox
-                android:id="@+id/checkbox_arabic_scroll"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/arabic_refugee_profile"
-                android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/radioButtonVolunteer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton_volunteer"
+            android:textColor="@color/grey"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="48dp"
+            android:buttonTint="@color/purple_500"/>
 
-            <CheckBox
-                android:id="@+id/checkbox_english_scroll"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/english_refugee_profile"
-                android:textSize="16sp" />
+    </RadioGroup>
 
-            <CheckBox
-                android:id="@+id/checkbox_dansk_scroll"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/dansk_refugee_profile"
-                android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-            <CheckBox
-                android:id="@+id/checkbox_tyrkisk_scroll"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/tyrkisk_refugee_edit_profile"
-                android:textSize="16sp" />
-        </LinearLayout>
-    </ScrollView>
+        android:text="@string/signuppage_spokenlanguages_text"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.158">
 
-    <ScrollView
-        android:id="@+id/scroll_app_language"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_saveprofile_editprofile"
+    </TextView>
+
+    <Spinner
+        android:id="@+id/language_spinner"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_applanguage_profile"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/editText_number_signuppage"
+        app:layout_constraintVertical_bias="0.569" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/behind_text"
-            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button_dansk_language"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:text="@string/dansk_refugee_profile"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/button_english_language"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:text="@string/english_refugee_profile"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/button_arabisk_language"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:text="@string/arabic_refugee_profile"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/button_tyrkisk_language"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:text="@string/tyrkisk_refugee_edit_profile"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
