@@ -18,12 +18,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RefugeeEditProfile extends AppCompatActivity {
-
-    private Button  button_saveprofile_editprofile;
-    private ImageView button_back_edit_profile;
-    private EditText username_ref, password_ref, number_ref;
-    private Spinner language_spinner_editRefugee;
+public class VolunteerEditProfile extends AppCompatActivity {
+    private Button button_saveprofile_vol;
+    private ImageView button_back_edit_vol;
+    private EditText username_vol, password_vol, number_vol;
+    private Spinner language_spinner_editVol;
     private String[] languagesArray;
     private DatabaseHandler dbHandler;
     private ArrayList<String> selectedLanguagesList;
@@ -35,23 +34,23 @@ public class RefugeeEditProfile extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();  // this line hides the actionbar
-        setContentView(R.layout.activity_refugee_edit_profile);
+        setContentView(R.layout.activity_volunteer_edit_profile);
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
-        dbHandler = new DatabaseHandler(RefugeeEditProfile.this);
+        dbHandler = new DatabaseHandler(VolunteerEditProfile.this);
 
-        username_ref = findViewById(R.id.editText_username_ref);
-        password_ref = findViewById(R.id.editText_password_ref);
-        number_ref = findViewById(R.id.editText_number_ref);
+        username_vol = findViewById(R.id.editText_username_vol);
+        password_vol = findViewById(R.id.editText_password_vol);
+        number_vol = findViewById(R.id.editText_number_vol);
 
-        language_spinner_editRefugee = findViewById(R.id.language_spinner_editRefugee);
+        language_spinner_editVol = findViewById(R.id.language_spinner_editVol);
         languagesArray = getResources().getStringArray(R.array.languages_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languagesArray);
-        language_spinner_editRefugee.setAdapter(adapter);
+        language_spinner_editVol.setAdapter(adapter);
 
         selectedLanguagesList = new ArrayList<>();
-        language_spinner_editRefugee.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        language_spinner_editVol.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLanguage = parent.getItemAtPosition(position).toString();
@@ -67,32 +66,32 @@ public class RefugeeEditProfile extends AppCompatActivity {
             }
         });
 
-        button_saveprofile_editprofile = findViewById(R.id.button_saveprofile_editprofile);
-        button_saveprofile_editprofile.setOnClickListener(new View.OnClickListener() {
+        button_saveprofile_vol = findViewById(R.id.button_saveprofile_vol);
+        button_saveprofile_vol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = username_ref.getText().toString();
-                String password = password_ref.getText().toString();
-                String telephone = number_ref.getText().toString();
+                String username = username_vol.getText().toString();
+                String password = password_vol.getText().toString();
+                String telephone = number_vol.getText().toString();
                 String languages = String.join(",", selectedLanguagesList);
 
-                dbHandler.updateRefugeeTable(userId, username, password, telephone, languages);
+                dbHandler.updateVolunteerTable(userId, username, password, telephone, languages);
 
-                Toast.makeText(RefugeeEditProfile.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
-                openRefugeeProfile();
+                Toast.makeText(VolunteerEditProfile.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                openVolunteerProfile();
             }
         });
 
-        button_back_edit_profile = (ImageView) findViewById(R.id.button_back_edit_profile);
-        button_back_edit_profile.setOnClickListener(new View.OnClickListener() {
+        button_back_edit_vol = (ImageView) findViewById(R.id.button_back_edit_vol);
+        button_back_edit_vol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRefugeeProfile();
+                openVolunteerProfile();
             }
         });
     }
-    public void openRefugeeProfile() {
-        Intent intent = new Intent(this, RefugeeProfile.class);
+    public void openVolunteerProfile() {
+        Intent intent = new Intent(this, VolunteerProfile.class);
         startActivity(intent);
     }
 }

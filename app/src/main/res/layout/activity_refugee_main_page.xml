@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.063" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/textview_volunteer_number"
         android:layout_width="266dp"
         android:layout_height="35dp"
@@ -79,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_start_call_refugee_main"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintVertical_bias="0.215" /> -->
 
     <TextView
         android:id="@+id/textView13"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.261" />
 
-    <Button
+   <!-- <Button
         android:id="@+id/show_number_refugeemain"
         android:layout_width="260dp"
         android:layout_height="60dp"
@@ -121,5 +121,5 @@
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_volunteer_number"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.154" /> -->
 </androidx.constraintlayout.widget.ConstraintLayout>

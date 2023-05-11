@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundcolor"
-    tools:context=".RefugeeEditProfile">
-
+    tools:context=".VolunteerEditProfile">
 
     <ImageView
-        android:id="@+id/button_back_edit_profile"
+        android:id="@+id/button_back_edit_vol"
         android:layout_width="41dp"
         android:layout_height="41dp"
         android:src="@drawable/back_arrow"
@@ -43,7 +41,7 @@
 
 
     <Button
-        android:id="@+id/button_saveprofile_editprofile"
+        android:id="@+id/button_saveprofile_vol"
         android:layout_width="260dp"
         android:layout_height="60dp"
         android:layout_marginBottom="44dp"
@@ -62,7 +60,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textview_editprof_refeditprofile"
+        android:id="@+id/textview_editprof_vol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -83,7 +81,7 @@
         app:layout_constraintVertical_bias="0.149" />
 
     <EditText
-        android:id="@+id/editText_username_ref"
+        android:id="@+id/editText_username_vol"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -102,11 +100,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_editprof_refeditprofile"
+        app:layout_constraintTop_toBottomOf="@+id/textview_editprof_vol"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText_password_ref"
+        android:id="@+id/editText_password_vol"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -124,11 +122,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_username_ref"
+        app:layout_constraintTop_toBottomOf="@+id/editText_username_vol"
         app:layout_constraintVertical_bias="0.026" />
 
     <EditText
-        android:id="@+id/editText_number_ref"
+        android:id="@+id/editText_number_vol"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -146,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_password_ref"
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_vol"
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
@@ -157,7 +155,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_number_ref"
+        app:layout_constraintTop_toBottomOf="@+id/editText_number_vol"
         app:layout_constraintVertical_bias="0.083"/>
 
     <TextView
@@ -178,16 +176,14 @@
     </TextView>
 
     <Spinner
-        android:id="@+id/language_spinner_editRefugee"
+        android:id="@+id/language_spinner_editVol"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:spinnerMode="dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_number_ref"
+        app:layout_constraintTop_toBottomOf="@+id/editText_number_vol"
         app:layout_constraintVertical_bias="0.569" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

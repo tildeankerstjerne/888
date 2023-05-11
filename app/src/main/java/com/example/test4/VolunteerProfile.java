@@ -49,11 +49,11 @@ public class VolunteerProfile extends AppCompatActivity {
         Cursor volunteerCursor = db.rawQuery(volunteerQuery, null);
         if (volunteerCursor.moveToFirst()) {
             String spokenLanguages = volunteerCursor.getString(volunteerCursor.getColumnIndex("language"));
-            text_speaklanguage_volunteer.setText("Your languages: " + spokenLanguages);
+            text_speaklanguage_volunteer.setText(spokenLanguages);
             String usernameVolunteer = volunteerCursor.getString(volunteerCursor.getColumnIndex("username"));
-            text_username_volunteer.setText("Your username: " + usernameVolunteer);
+            text_username_volunteer.setText(usernameVolunteer);
             String numberVolunteer = volunteerCursor.getString(volunteerCursor.getColumnIndex("number"));
-            text_number_volunteer.setText("Your number: " + numberVolunteer);
+            text_number_volunteer.setText(numberVolunteer);
         }
         volunteerCursor.close();
         db.close();
@@ -63,7 +63,7 @@ public class VolunteerProfile extends AppCompatActivity {
         button_edit_volunteer_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // openVolunteerEditProfile();
+                openVolunteerEditProfile();
             }
         });
 
@@ -76,6 +76,12 @@ public class VolunteerProfile extends AppCompatActivity {
 
         });
     }
+
+    public void openVolunteerEditProfile() {
+        Intent intent = new Intent(this,VolunteerEditProfile.class);
+        startActivity(intent);
+    }
+
 
     public void openVolunteerMenu(){
         Intent intent = new Intent(this, VolunteerMenu.class);
