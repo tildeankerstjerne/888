@@ -10,90 +10,142 @@
 
     <Button
         android:id="@+id/button_edit_volunteer_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="2dp"
         android:text="@string/edit_refugee_notes"
-        app:layout_constraintBottom_toTopOf="@+id/text_speaklanguage_volunteer"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_500"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picture_profileicon_profile" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
 
-    <Button
+    <ImageView
         android:id="@+id/button_back_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="404dp"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/back_arrow"
         android:text="@string/back"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
+
+
+    <TextView
+        android:id="@+id/text_username_volunteerprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="45dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/speaklanguage_refugeeprofile"
+        android:textColor="@color/red"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_volunteer" />
-
-    <TextView
-        android:id="@+id/text_speaklanguage_volunteer"
-        android:layout_width="398dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="49dp"
-        android:text="@string/speaklanguage_refugeeprofile"
-        android:textColor="#6246EA"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_edit_volunteer_profile" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text_orientation_volunteerprofile"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/picture_profileicon_profile"
-        android:layout_width="77dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="man person"
         android:src="@drawable/baseline_person_24"
-        app:layout_constraintBottom_toTopOf="@+id/button_edit_volunteer_profile"
+        app:layout_constraintBottom_toTopOf="@+id/text_username_volunteer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="man person"/>
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/text_username_volunteer"
-        android:layout_width="402dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="36dp"
-        android:text="username"
-        app:layout_constraintBottom_toTopOf="@+id/button_back_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_volunteer" />
-
-    <TextView
-        android:id="@+id/text_number_volunteer"
-        android:layout_width="412dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="299dp"
-        android:text="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_refugeeprofile"
+        android:textColor="@color/red"
+        android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_back_profile" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <TextView
+        android:id="@+id/text_orientation_volunteerprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_username_volunteer"
+        app:layout_constraintVertical_bias="0.034">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_speaklanguage_volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="45dp"
+        android:text="username"
+        android:textColor="#284D4E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_username_volunteerprofile"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/text_mobilenumber_volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="45dp"
+        android:text="@string/mobilenumber_refugeeeditprofile"
+        android:textColor="@color/red"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_speaklanguage_volunteer"
+        app:layout_constraintVertical_bias="0.172">
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_number_volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="45dp"
+        android:text="number"
+        android:textColor="#284D4E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_mobilenumber_volunteer"
+        app:layout_constraintVertical_bias="0.031" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

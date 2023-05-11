@@ -7,17 +7,20 @@
     android:background="@color/backgroundcolor"
     tools:context=".RefugeeEditProfile">
 
-    <Button
+
+    <ImageView
         android:id="@+id/button_back_edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/back_arrow"
+        android:text="@string/back"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.067" ></ImageView>
 
 
     <!--
@@ -44,12 +47,13 @@
         android:layout_width="260dp"
         android:layout_height="60dp"
         android:layout_marginBottom="44dp"
-        android:text="Save profile"
+        android:text="@string/button_save_refugeeeditprofile"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="17sp"
         android:textStyle="bold"
         app:cornerRadius="30dp"
+        android:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -65,7 +69,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="Edit profile"
+        android:text="@string/text_editprofile_refugeeeditprofile"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/red"

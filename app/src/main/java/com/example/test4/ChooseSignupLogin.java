@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -19,6 +20,8 @@ public class ChooseSignupLogin extends AppCompatActivity {
 
     private Button button_login;
 
+    private ImageView imageview_back_choosesignlogin;
+
     private Button button_signup;
 
     @Override
@@ -27,8 +30,16 @@ public class ChooseSignupLogin extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();  // this line hides the actionbar
-        
         setContentView(R.layout.activity_choose_signup_login);
+
+        imageview_back_choosesignlogin = (ImageView) findViewById(R.id.imageview_back_choosesignlogin);
+        imageview_back_choosesignlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openMainActivity();
+            }
+        });
 
         textViewLogin = (TextView) findViewById(R.id.text_open_login);
         textViewLogin.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +61,10 @@ public class ChooseSignupLogin extends AppCompatActivity {
 
     }
 
+    public void openMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     public void openLoginPage(){
         Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);

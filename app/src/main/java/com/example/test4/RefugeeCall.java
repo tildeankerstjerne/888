@@ -15,11 +15,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RefugeeCall extends AppCompatActivity {
     EditText phoneNo;
+
+    private ImageView imageview_back_call;
     FloatingActionButton callbtn;
     static int PERMISSION_CODE = 100;
     static int CALL_CODE = 101;
@@ -41,6 +44,15 @@ public class RefugeeCall extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(RefugeeCall.this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(RefugeeCall.this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_CODE);
         }
+
+        imageview_back_call = (ImageView) findViewById(R.id.imageview_back_call);
+        imageview_back_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openRefugeeMainPage();
+            }
+        });
         callbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +62,11 @@ public class RefugeeCall extends AppCompatActivity {
                 startActivityForResult(i, CALL_CODE);
             }
         });
+    }
+
+    public void openRefugeeMainPage(){
+        Intent intent = new Intent(RefugeeCall.this, RefugeeMainPage.class);
+        startActivity(intent);
     }
 
     @Override

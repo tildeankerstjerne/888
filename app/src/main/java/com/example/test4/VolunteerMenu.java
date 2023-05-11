@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class VolunteerMenu extends AppCompatActivity {
     private Button volunteer_profile;
     private Button volunteer_logoff;
     private int userId;
+
+    private ImageView button_menu_refugee_main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,15 @@ public class VolunteerMenu extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
+
+        button_menu_refugee_main = (ImageView) findViewById(R.id.button_menu_refugee_main);
+        button_menu_refugee_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openVolunteerMainPage();
+            }
+        });
 
         volunteer_profile = (Button) findViewById(R.id.volunteer_profile);
         volunteer_profile.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +59,13 @@ public class VolunteerMenu extends AppCompatActivity {
         Intent intent = new Intent(this, VolunteerProfile.class);
         startActivity(intent);
     }
+
+    public void openVolunteerMainPage(){
+        Intent intent = new Intent(this, VolunteerMainPage.class);
+        startActivity(intent);
+    }
+
+
     public void openLogoff(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

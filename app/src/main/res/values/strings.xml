@@ -20,26 +20,46 @@
     <string name="button_emergencyinfo_refugeemain">Emergency information</string>
 
     <!-- RefugeeCall -->
+    <string name="hint_writenumber_call">Insert number...</string>
+    <string name="button_findvolunteernumber">Find volunteer</string>
+    <string name="text_volunteernumber">Volunteer\'s number: </string>
+
+
 
     <!-- RefugeeCallEnded -->
+    <string name="button_homepage_callended">Homepage</string>
+    <string name="button_savenotes_callended">Save note</string>
+    <string name="hint_writenote_callended">Write a note...</string>
+    <string name="text_callended_callended">Call ended</string>
+
+
 
     <!-- RefugeeMenu -->
     <string name="button_profile_refugeemenu">Profile</string>
     <string name="button_notes_refugeemenu">Notes</string>
     <string name="button_logoff_refugeemenu">Log off</string>
 
-    <!-- RefugeeProfile -->
+
 
     <!-- RefugeeNotes -->
+    <string name="dato_refugee_notes">Your notes</string>
+    <string name="note_refugee_notes">Note activity</string>
 
-    <!-- RefugeeEditNotes -->
 
-    <!-- RefugeeEditProfile -->
+
+    <!-- RefugeeProfile && VolunteerProfile -->
     <string name="speaklanguage_refugeeprofile">I speak the following languages:</string>
     <string name="mobilenumber_refugeeeditprofile">Mobile number</string>
+    <string name="username_refugeeprofile">Username</string>
+
+    <!-- RefugeeProfile -->
+    <string name="text_editprofile_refugeeeditprofile">Edit profile</string>
+    <string name="button_save_refugeeeditprofile">Save changes</string>
 
 
-
+    <!-- Emergencyinfo -->
+    <string name="activity_emergency0">Emergency number: 112</string>
+    <string name="activity_emergency1">Police department: 114</string>
 
     <!-- VolunteerMainPage -->
     <string name="textview_welcome_volunteermain">Welcome,</string>
@@ -50,19 +70,21 @@
     <string name="button_profile_volunteermenu">Profile</string>
     <string name="button_logoff_volunteermenu">Log off</string>
 
-    <!-- VolunteerProfile -->
+
+
+
 
 
 
     <!-- Other -->
-    <string name="username_refugeeprofile">Username</string>
+
     <string name="role_volunteer_refugeeprofile">Volunteer</string>
     <string name="role_refugee_refugeeprofile">Refugee</string>
     <string name="applanguage_refugeeprofile">App Language:</string>
     <string name="saveprofile">Save profile</string>
-    <string name="dato_refugee_notes">indsæt dato</string>
+
     <string name="tidspunkt_refugee_notes">indsæt tidspunkt</string>
-    <string name="note_refugee_notes">Note activity</string>
+
     <string name="edit_refugee_notes">Edit</string>
     <string name="dansk_refugee_profile">Dansk</string>
     <string name="english_refugee_profile">English</string>
@@ -74,7 +96,7 @@
     <string name="activity_volunteer_main_page1">Available</string>
     <string name="activity_volunteer_main_page2">Not available</string>
     <string name="activity_volunteer_main_page3">You can receive calls</string>
-    <string name="activity_volunteer_main_page4">You cant receive calls</string>
+    <string name="activity_volunteer_main_page4">You can\'t receive calls</string>
     <string name="activity_login_page0">Login</string>
     <string name="Activity_login_page1"><U>Not a user? Create a user</U></string>
     <string name="Activity_choose_app_language0">Welcome!</string>
@@ -89,8 +111,7 @@
     <string name="Activity_choose_app_language9">فارسی</string>
     <string name="Activity_choose_app_language10">پښتو</string>
     <string name="Activity_choose_app_language11">اردو</string>
-    <string name="activity_emergency0">Urgent emergency number: 112</string>
-    <string name="activity_emergency1">Police department: 114</string>
+
 
     <!-- Array af strings used in the SignupPage activity -->
     <string-array name="languages_array">

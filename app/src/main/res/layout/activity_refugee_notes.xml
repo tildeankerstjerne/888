@@ -9,41 +9,46 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="146dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="129dp"
         android:text="@string/note_refugee_notes"
-        android:textColor="#D66850"
-        android:textSize="24sp"
+        android:textColor="@color/red"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="92dp"
-        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="74dp"
         android:layout_marginEnd="151dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17"
         app:srcCompat="@drawable/notebook" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="269dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="174dp"
+        android:layout_width="312dp"
+        android:layout_height="359dp"
+        android:layout_marginBottom="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.409">
 
         <TableRow
             android:layout_width="match_parent"
@@ -51,27 +56,28 @@
 
             <TextView
                 android:id="@+id/text_note1date_notes"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="@string/dato_refugee_notes"
                 android:textColor="#D66850"
-                android:textSize="12sp" />
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/text_note1time_notes"
-                android:layout_width="151dp"
-                android:layout_height="wrap_content"
-                android:text="@string/tidspunkt_refugee_notes"
-                android:textColor="#D66850"
-                android:textSize="12sp" />
+
         </TableRow>
 
         <TextView
             android:id="@+id/text_note"
             android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:textColor="#515050"
-            android:textSize="12sp" />
+            android:layout_height="298dp"
+            android:background="@drawable/customborder"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:textColor="#284D4E"
+            android:textSize="18sp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -79,17 +85,18 @@
 
     </TableLayout>
 
-    <Button
+    <ImageView
         android:id="@+id/button_back_notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="307dp"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/back_arrow"
         android:text="@string/back"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

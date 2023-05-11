@@ -15,38 +15,54 @@
         android:id="@+id/text_open_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="264dp"
         android:text="@string/login"
         android:textColor="@color/red"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_open_signup"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/button_open_signup" />
 
     <Button
         android:id="@+id/button_open_signup"
-        android:layout_width="236dp"
-        android:layout_height="230dp"
+        android:layout_width="229dp"
+        android:layout_height="237dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/circle_button"
+        android:textColor="@color/white"
         android:gravity="center"
         android:text="@string/signup"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        app:cornerRadius="300dp"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.403"
+        android:backgroundTint="@color/purple_500"/>
+
+
+    <ImageView
+        android:id="@+id/imageview_back_choosesignlogin"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/back_arrow"
+        android:text="@string/back"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" >
+
+    </ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

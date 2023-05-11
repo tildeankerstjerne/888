@@ -9,12 +9,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class RefugeeMenu extends AppCompatActivity {
     private Button button_profile_menu;
     private Button button_notes_menu;
     private Button button_logoff_menu;
+
+    private ImageView button_menu_refugee_main;
     private int userId;
 
     @Override
@@ -27,6 +30,15 @@ public class RefugeeMenu extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
+
+        button_menu_refugee_main = (ImageView) findViewById(R.id.button_menu_refugee_main);
+        button_menu_refugee_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openRefugeeMainPage();
+            }
+        });
 
         button_profile_menu = (Button) findViewById(R.id.button_profile_menu);
         button_profile_menu.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +65,11 @@ public class RefugeeMenu extends AppCompatActivity {
                 openSignupLogin();
             }
         });
+    }
+
+    public void openRefugeeMainPage(){
+        Intent intent = new Intent(this, RefugeeMainPage.class);
+        startActivity(intent);
     }
     public void openRefugeeProfile(){
         Intent intent = new Intent(this, RefugeeProfile.class);

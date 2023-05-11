@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class RefugeeEditProfile extends AppCompatActivity {
 
-    private Button button_back_edit_profile, button_saveprofile_editprofile;
+    private Button button_saveprofile_editprofile;
+    private ImageView button_back_edit_profile;
     private int userId;
 
     @Override
@@ -26,7 +28,7 @@ public class RefugeeEditProfile extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         userId = sharedPreferences.getInt("userId", -1);
 
-        button_back_edit_profile = (Button) findViewById(R.id.button_back_edit_profile);
+        button_back_edit_profile = (ImageView) findViewById(R.id.button_back_edit_profile);
         button_back_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
