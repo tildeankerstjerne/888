@@ -11,12 +11,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
 
     private TextView button_create_user_login;
+
+    private ImageView imageview_back_loginpage;
 
     private Button button_continue_login, button_continue_volunteer_login, button_login;
     private EditText enter_username_login, enter_password_login;
@@ -39,6 +42,15 @@ public class LoginPage extends AppCompatActivity {
         button_create_user_login = findViewById(R.id.button_create_user_login);
         enter_username_login = findViewById(R.id.enter_username_login);
         enter_password_login = findViewById(R.id.enter_password_login);
+
+        imageview_back_loginpage = (ImageView) findViewById(R.id.imageview_back_loginpage);
+        imageview_back_loginpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openChooseSignupLogin();
+            }
+        });
 
         button_create_user_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +93,11 @@ public class LoginPage extends AppCompatActivity {
 
     public void openRefugeeMainPage(){
         Intent intent = new Intent(LoginPage.this, RefugeeMainPage.class);
+        startActivity(intent);
+    }
+
+    private void openChooseSignupLogin(){
+        Intent intent = new Intent(LoginPage.this, ChooseSignupLogin.class);
         startActivity(intent);
     }
 

@@ -9,36 +9,90 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="263dp"
-        android:layout_height="68dp"
-        android:ems="10"
-        android:inputType="phone"
+        android:layout_width="273dp"
+        android:layout_height="59dp"
         android:background="@drawable/customborder"
-        android:hint="Write number"
+        android:ems="10"
+        android:hint="@string/hint_writenumber_call"
+        android:inputType="phone"
         android:padding="12dp"
-        android:textColorHint="@color/lightgrey"
         android:textColor="@color/grey"
+        android:textColorHint="@color/lightgrey"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205"/>
+        app:layout_constraintVertical_bias="0.26" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/callbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="408dp"
+        android:backgroundTint="@color/purple_500"
         android:clickable="true"
         android:contentDescription="call"
-
+        android:src="@drawable/baseline_call_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:rippleColor="@color/purple_700" />
+
+    <Button
+        android:id="@+id/show_number_refugeemain"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="140dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/button_findvolunteernumber"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_volunteer_number"
+        android:layout_width="266dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="224dp"
+        android:text="@string/text_volunteernumber"
+        android:textStyle="bold"
+        android:textColor="#284D4E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageview_back_call"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/back_arrow"
+        android:text="@string/back"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" >
+
+    </ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

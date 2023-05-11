@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +29,8 @@ import android.content.ContentValues;
 public class SignupPage extends AppCompatActivity {
     // creating variables for our edittext, button and dbhandler
     private EditText _username, _password, _telephone;
+
+    private ImageView imageview_back_signuppage;
     private Spinner languageSpinner;
     private String[] languagesArray;
     private Button ContinueButton;
@@ -90,6 +93,15 @@ public class SignupPage extends AppCompatActivity {
             }
         });
 
+        imageview_back_signuppage = (ImageView) findViewById(R.id.imageview_back_signuppage);
+        imageview_back_signuppage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //kalder på metoden vi laver nedenunder
+                openChooseSignupLogin();
+            }
+        });
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -142,11 +154,17 @@ public class SignupPage extends AppCompatActivity {
                 }
 
             }
+
         });
     }
 
     private void openLogin(){
         Intent intent = new Intent(SignupPage.this, LoginPage.class);
+        startActivity(intent);
+    }
+
+    private void openChooseSignupLogin(){
+        Intent intent = new Intent(SignupPage.this, ChooseSignupLogin.class);
         startActivity(intent);
     }
 

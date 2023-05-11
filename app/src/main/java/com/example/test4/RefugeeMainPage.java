@@ -21,12 +21,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
+
 
 public class RefugeeMainPage extends AppCompatActivity {
 
-    private Button button_emergency_refugee_main, button_menu_refugee_main, button_start_call_refugee_main, show_number_refugeemain;
+    private Button button_emergency_refugee_main, button_start_call_refugee_main, show_number_refugeemain;
+
+    private ImageView button_menu_refugee_main;
     private TextView volunteerNumberTextView;
     private SharedPreferences sharedPreferences;
     private int userId;
@@ -98,7 +103,8 @@ public class RefugeeMainPage extends AppCompatActivity {
                 openEmergencyInfoPage();
             }
         });
-        button_menu_refugee_main = (Button) findViewById(R.id.button_menu_refugee_main);
+        button_menu_refugee_main = (ImageView) findViewById(R.id.button_menu_refugee_main);
+
         button_menu_refugee_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

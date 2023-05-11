@@ -12,11 +12,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.widget.ImageView;
 import java.util.List;
 
 public class RefugeeNotes extends AppCompatActivity {
-    private Button button_edit_notes, button_back_notes;
+
+    private Button button_edit_notes;
+    private ImageView button_back_notes;
     private TextView text_note;
     private int userId;
 
@@ -39,7 +41,7 @@ public class RefugeeNotes extends AppCompatActivity {
         String notesString = TextUtils.join("\n", allNotes);
         text_note.setText("Your notes:\n" + notesString);
 
-        button_back_notes = (Button) findViewById(R.id.button_back_notes);
+        button_back_notes = (ImageView) findViewById(R.id.button_back_notes);
         button_back_notes.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

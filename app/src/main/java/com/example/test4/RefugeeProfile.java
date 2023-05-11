@@ -12,10 +12,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 public class RefugeeProfile extends AppCompatActivity {
-    private Button button_edit_refugee_profile, button_back_profile;
+    private Button button_edit_refugee_profile;
+    private ImageView button_back_profile;
     private TextView text_speaklanguage_refugee, text_username_refugee, text_number_refugee;
     private int userId;
 
@@ -59,7 +62,7 @@ public class RefugeeProfile extends AppCompatActivity {
             }
         });
 
-        button_back_profile = (Button) findViewById(R.id.button_back_refugee);
+        button_back_profile = (ImageView) findViewById(R.id.button_back_refugee);
         button_back_profile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
