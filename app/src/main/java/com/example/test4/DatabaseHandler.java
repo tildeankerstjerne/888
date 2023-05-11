@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -166,15 +167,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-   /*public void AddNotesTable(int refugeeId, String notes) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("refugee_id", refugeeId);
-        contentValues.put("notes", notes);
-        db.insert("notes", null, contentValues);
-        db.close();
-    }*/
-
     // In order to update the table, we need to delete it and create a new upgraded one
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -250,4 +242,69 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
         return notesList;
     }
+
+   /* public void updateRefugeeTable(String username, String password, String telephone, ArrayList<String> selectedLanguagesList) {
+        String languages = "";
+        for (String languageItem : selectedLanguagesList) {
+            languages += languageItem + ",";
+        }
+
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase(); // creating a reference to the database
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(REFUGEE_COLUMN_PASSWORD, password);
+        values.put(REFUGEE_COLUMN_NUMBER, telephone);
+        values.put(REFUGEE_COLUMN_LANGUAGE, languages);
+
+        // on below line we are updating
+        // the values in our table.
+        db.update(REFUGEE_TABLE_NAME, values, REFUGEE_COLUMN_USERNAME + "=?", new String[]{username});
+
+        // at last we are closing our
+        // database after updating database.
+        db.close();
+    }*/
+   public void updateRefugeeTable(int userId, String username, String password, String telephone, ArrayList<String> selectedLanguagesList) {
+       SQLiteDatabase db = this.getWritableDatabase();
+       ContentValues values = new ContentValues();
+       values.put("username", username);
+       values.put("password", password);
+       values.put("telephone", telephone);
+       String languages = String.join(",", selectedLanguagesList);
+       values.put("selectedLanguageList", languages);
+       db.update(REFUGEE_TABLE_NAME, values, "id=?", new String[]{String.valueOf(userId)});
+       db.close();
+   }
+    public void updateRefugeeTable(int userId, String username, String password, String telephone, String languages) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(REFUGEE_COLUMN_USERNAME, username);
+        values.put(REFUGEE_COLUMN_PASSWORD, password);
+        values.put(REFUGEE_COLUMN_NUMBER, telephone);
+        values.put(REFUGEE_COLUMN_LANGUAGE, languages);
+        db.update(REFUGEE_TABLE_NAME, values, REFUGEE_COLUMN_ID + " = ?", new String[] { String.valueOf(userId) });
+        db.close();
+    }
+
+    public void updateVolunteerTable(int userId, String username, String password, String telephone, String languages) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(VOLUNTEER_COLUMN_USERNAME, username);
+        values.put(VOLUNTEER_COLUMN_PASSWORD, password);
+        values.put(VOLUNTEER_COLUMN_NUMBER, telephone);
+        values.put(VOLUNTEER_COLUMN_LANGUAGE, languages);
+        db.update(VOLUNTEER_TABLE_NAME, values, VOLUNTEER_COLUMN_ID + " = ?", new String[] { String.valueOf(userId) });
+        db.close();
+    }
+
+
+
 }

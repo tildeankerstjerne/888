@@ -46,11 +46,11 @@ public class RefugeeProfile extends AppCompatActivity {
         Cursor refugeeCursor = db.rawQuery(refugeeQuery, null);
         if (refugeeCursor.moveToFirst()) {
             String spokenLanguages = refugeeCursor.getString(refugeeCursor.getColumnIndex("language"));
-            text_speaklanguage_refugee.setText("Your languages: " + spokenLanguages);
+            text_speaklanguage_refugee.setText(spokenLanguages);
             String usernameRefugee = refugeeCursor.getString(refugeeCursor.getColumnIndex("username"));
-            text_username_refugee.setText("Your username: " + usernameRefugee);
+            text_username_refugee.setText(usernameRefugee);
             String numberRefugee = refugeeCursor.getString(refugeeCursor.getColumnIndex("number"));
-            text_number_refugee.setText("Your number: " + numberRefugee);
+            text_number_refugee.setText(numberRefugee);
         }
         refugeeCursor.close();
         db.close();

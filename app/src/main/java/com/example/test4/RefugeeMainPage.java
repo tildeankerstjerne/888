@@ -57,7 +57,7 @@ public class RefugeeMainPage extends AppCompatActivity {
             Toast.makeText(RefugeeMainPage.this, "Failed", Toast.LENGTH_SHORT).show();
         }
 
-        show_number_refugeemain = (Button) findViewById(R.id.show_number_refugeemain);
+       /* show_number_refugeemain = (Button) findViewById(R.id.show_number_refugeemain);
 
         show_number_refugeemain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +93,7 @@ public class RefugeeMainPage extends AppCompatActivity {
                 }
                 cursor.close();
             }
-        });
+        }); */
 
 
         button_emergency_refugee_main = (Button) findViewById(R.id.button_emergency_refugee_main);
