@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
     tools:context=".VolunteerEditProfile">
 
     <ImageView
@@ -18,7 +19,9 @@
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" ></ImageView>
+        app:layout_constraintVertical_bias="0.067" >
+
+    </ImageView>
 
 
     <!--
@@ -56,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/language_spinner_editRefugee"
+        app:layout_constraintTop_toBottomOf="@+id/language_spinner_editVol"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
