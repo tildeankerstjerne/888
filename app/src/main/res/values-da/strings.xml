@@ -43,7 +43,7 @@
     <string name="preflanguage_refugee_profile">Appen sprog skal være:</string>
     <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
 
-    <string name="activity_volunteer_main_page0">Velkommen, navn!</string>
+    <string name="activity_volunteer_main_page0">Velkommen</string>
     <string name="activity_volunteer_main_page1">Tilgængelig</string>
     <string name="activity_volunteer_main_page2">Ikke tilgængelig</string>
     <string name="activity_volunteer_main_page3">Du kan modtage opkald</string>
