@@ -16,7 +16,7 @@
 
     <!-- RefugeeMainPage -->
     <string name="button_startcall_refugeemain">Start call</string>
-    <string name="textview_welcome_refugeemain">Welcome,</string>
+    <string name="textview_welcome_refugeemain">Welcome</string>
     <string name="button_emergencyinfo_refugeemain">Emergency information</string>
 
     <!-- RefugeeCall -->
@@ -92,7 +92,7 @@
     <string name="preflanguage_refugee_profile">I want the app to be in:</string>
     <string name="tyrkisk_refugee_edit_profile">Türkçe</string>
 
-    <string name="activity_volunteer_main_page0">Welcome, name!</string>
+    <string name="activity_volunteer_main_page0">Welcome!</string>
     <string name="activity_volunteer_main_page1">Available</string>
     <string name="activity_volunteer_main_page2">Not available</string>
     <string name="activity_volunteer_main_page3">You can receive calls</string>
