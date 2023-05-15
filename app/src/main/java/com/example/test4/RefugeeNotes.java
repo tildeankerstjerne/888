@@ -39,7 +39,7 @@ public class RefugeeNotes extends AppCompatActivity {
 
         List<String> allNotes = dbHandler.getAllNotes(userId);
         String notesString = TextUtils.join("\n", allNotes);
-        text_note.setText("Your notes:\n" + notesString);
+        text_note.setText(notesString);
 
         button_back_notes = (ImageView) findViewById(R.id.button_back_notes);
         button_back_notes.setOnClickListener(new View.OnClickListener(){
